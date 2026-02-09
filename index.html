@@ -344,4 +344,44 @@
         <a href="https://shopee.com.br/SEU_LINK_SHOPEE" target="_blank" class="shopee-btn">
             <i class="fas fa-shopping-bag"></i> Visite nossa Loja na Shopee
         </a>
-        <p style="margin-top: 40px; font-size: 0.8rem; color: #888;">&copy; 2026 Nollies 3D. Todos os direitos reservados. Impressão 3D com estilo
+        <p style="margin-top: 40px; font-size: 0.8rem; color: #888;">&copy; 2026 Nollies 3D. Todos os direitos reservados. Impressão 3D com estilo e precisão.</p>
+    </footer>
+
+    <script>
+        const WHATSAPP_NUMBER = "5511999999999"; // <--- SUBSTITUA PELO SEU NÚMERO DE WHATSAPP (com DDD)
+
+        // Função para preencher o formulário ao clicar em um modelo da vitrine
+        function preencherForm(nomeModelo, linkModelo) {
+            document.getElementById('origem').value = 'Thingiverse'; // Define a origem como Thingiverse
+            document.getElementById('detalhes').value = `Olá! Gostaria de um orçamento para o modelo: *${nomeModelo}*\nLink: ${linkModelo}\n\n`; // Preenche a descrição
+            
+            // Rola suavemente até a seção do formulário
+            document.getElementById('ideia').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Função para enviar o orçamento via WhatsApp
+        function enviarWhats() {
+            const origem = document.getElementById('origem').value;
+            const detalhes = document.getElementById('detalhes').value;
+            
+            let mensagemWhats = `*NOVO PEDIDO DE ORÇAMENTO NOLLIES 3D*\n\n`;
+            mensagemWhats += `*Origem do Projeto:* ${origem}\n`;
+            mensagemWhats += `*Detalhes da Ideia/Link:* ${detalhes}\n\n`;
+            mensagemWhats += `Aguardamos seu contato para transformar sua ideia em realidade!`;
+
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagemWhats)}`;
+            window.open(url, '_blank');
+        }
+
+        // Funções para scroll suave dos links do menu
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
