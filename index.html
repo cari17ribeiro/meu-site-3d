@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Loja 3D | Orçamentos e Modelos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-cube"></i> TECH<strong>3D</strong></div>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#vitrine">Modelos</a></li>
+                <li><a href="#orcamento">Orçamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Impressão 3D de Alta Qualidade</h1>
+            <p>Escolha um modelo famoso ou envie seu próprio projeto para orçamento.</p>
+            <a href="#vitrine" class="btn-main">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <section id="vitrine" class="container-vitrine">
+        <h2 class="titulo-sessao">Modelos Populares (Thingiverse)</h2>
+        <p>Clique em um modelo para solicitar o orçamento automático.</p>
+        
+        <div class="grid-modelos">
+            <div class="card-modelo">
+                <img src="https://cdn.thingiverse.com/renders/e9/89/3f/82/53/339a06692224734563a3d548b871ed3d_display_large.jpg" alt="Vaso">
+                <div class="info-modelo">
+                    <h3>Vaso Espiral Low Poly</h3>
+                    <p>Decoração moderna para mesas e estantes.</p>
+                    <button onclick="selecionarModelo('Vaso Espiral', 'https://www.thingiverse.com/thing:186720')">Selecionar</button>
+                </div>
+            </div>
+
+            <div class="card-modelo">
+                <img src="https://cdn.thingiverse.com/renders/7c/4f/2e/7d/5a/04b8b693e54f762f026b2f4f24f0c6e2_display_large.jpg" alt="Suporte">
+                <div class="info-modelo">
+                    <h3>Suporte Celular Universal</h3>
+                    <p>Ajustável e muito resistente.</p>
+                    <button onclick="selecionarModelo('Suporte Celular', 'https://www.thingiverse.com/thing:2194278')">Selecionar</button>
+                </div>
+            </div>
+
+            <div class="card-modelo">
+                <img src="https://cdn.thingiverse.com/renders/bc/f1/d0/20/30/434676109968a306471e43343c9429c3_display_large.jpg" alt="Articulado">
+                <div class="info-modelo">
+                    <h3>Dragão Articulado</h3>
+                    <p>O modelo mais famoso para testes de precisão.</p>
+                    <button onclick="selecionarModelo('Dragão Articulado', 'https://www.thingiverse.com/thing:5153330')">Selecionar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="orcamento" class="container-form">
+        <div class="card-form">
+            <h2><i class="fab fa-whatsapp"></i> Solicitar Orçamento</h2>
+            
+            <div class="form-group">
+                <label>Origem do Projeto:</label>
+                <select id="origem" onchange="toggleInputs()">
+                    <option value="thingiverse">Link do Thingiverse / Cults3D</option>
+                    <option value="proprio">Tenho meu próprio arquivo (.STL)</option>
+                </select>
+            </div>
+
+            <div id="group-link" class="form-group">
+                <label>Link do Modelo:</label>
+                <input type="text" id="linkModel" placeholder="https://www.thingiverse.com/...">
+            </div>
+
+            <div class="form-group">
+                <label>Material:</label>
+                <select id="material">
+                    <option value="PLA">PLA (Cores variadas)</option>
+                    <option value="PETG">PETG (Resistência Térmica)</option>
+                    <option value="Resina">Resina (Alta Definição)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Observações:</label>
+                <textarea id="obs" rows="3" placeholder="Cor, tamanho aproximado, etc..."></textarea>
+            </div>
+
+            <button class="btn-whatsapp" onclick="enviarWhatsApp()">
+                <i class="fab fa-whatsapp"></i> Enviar para Orçamento
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Tech3D Impressões. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
