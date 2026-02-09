@@ -1,138 +1,15 @@
-:root {
-    --orange: #ff4d00;
-    --dark-bg: #1a1a1a;
-    --card-bg: #2a2a2a;
-    --white: #ffffff;
-    --blue-detail: #00e5ff;
+const WHATSAPP_NUM = "5513997372464"; // Coloque seu número aqui
+
+function setModelo(nome, link) {
+    const area = document.getElementById('info');
+    area.value = `Gostaria de um orçamento para:\n📦 *${nome}*\n🔗 Link: ${link}`;
+    document.getElementById('ideia').scrollIntoView({ behavior: 'smooth' });
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body { 
-    font-family: 'Oswald', sans-serif; 
-    background-color: var(--dark-bg); 
-    color: var(--white);
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
-
-/* Header com Logo */
-header {
-    background: rgba(0,0,0,0.9);
-    padding: 10px 5%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid var(--orange);
-}
-
-.logo-area img { height: 50px; }
-
-nav ul { display: flex; list-style: none; gap: 20px; }
-nav a { color: var(--white); text-decoration: none; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
-nav a:hover { color: var(--orange); }
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.hero-logo { width: 280px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,77,0,0.5)); }
-.hero h1 { font-family: 'Bangers', cursive; font-size: 4rem; line-height: 1; }
-.hero h1 span { color: var(--orange); }
-.hero p { margin-bottom: 30px; font-weight: 300; letter-spacing: 1px; }
-
-.btn-cta { 
-    background: var(--orange); 
-    color: white; 
-    padding: 15px 35px; 
-    text-decoration: none; 
-    font-weight: bold; 
-    text-transform: uppercase;
-    border-radius: 5px;
-    box-shadow: 4px 4px 0px var(--blue-detail);
-}
-
-/* Seção Modelos com Scroll Lateral */
-.modelos-section { padding: 80px 5%; }
-.title { font-family: 'Bangers', cursive; font-size: 3rem; text-align: center; margin-bottom: 40px; }
-.title span { color: var(--orange); }
-
-.carousel-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px 0;
-    scrollbar-width: none; /* Firefox */
-}
-
-.carousel-container::-webkit-scrollbar { display: none; } /* Chrome/Safari */
-
-.card {
-    min-width: 280px;
-    background: var(--card-bg);
-    border-radius: 10px;
-    overflow: hidden;
-    flex-shrink: 0;
-    transition: 0.3s;
-    border: 1px solid #444;
-}
-
-.card-destaque {
-    min-width: 400px;
-    border: 2px solid var(--orange);
-    box-shadow: 0 0 15px rgba(255, 77, 0, 0.4);
-}
-
-.card img { width: 100%; height: 250px; object-fit: cover; }
-.card-content { padding: 20px; text-align: center; }
-.card-content h3 { font-family: 'Bangers', cursive; margin-bottom: 15px; }
-
-.btn-order {
-    background: var(--orange);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 5px;
-}
-
-/* Formulário e Rodapé */
-.form-container { background: #111; padding: 40px; border-radius: 10px; max-width: 700px; margin: 0 auto; }
-.input-group { margin-bottom: 15px; }
-label { display: block; margin-bottom: 8px; color: var(--blue-detail); text-transform: uppercase; font-size: 0.8rem; }
-input, select, textarea { width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; }
-
-.btn-whatsapp { 
-    background: #25D366; 
-    color: white; 
-    width: 100%; 
-    padding: 15px; 
-    border: none; 
-    font-weight: bold; 
-    cursor: pointer;
-    font-size: 1.1rem;
-}
-
-.social-links { text-align: center; margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 2rem; }
-.social-links a { color: white; transition: 0.3s; }
-.social-links a:hover { color: var(--orange); }
-.btn-shopee { background: #ff4500; font-size: 1rem; padding: 10px 20px; border-radius: 5px; }
-
-@media (max-width: 768px) {
-    .card-destaque { min-width: 300px; }
-    .hero h1 { font-size: 2.5rem; }
+function enviar() {
+    const tipo = document.getElementById('tipo').value;
+    const info = document.getElementById('info').value;
+    const msg = `*NOVO ORÇAMENTO NOLLIES 3D*\n\n*Tipo:* ${tipo}\n*Detalhes:* ${info}`;
+    
+    window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(msg)}`, '_blank');
 }
