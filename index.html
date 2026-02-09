@@ -16,7 +16,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Oswald', sans-serif; background-color: var(--dark); color: var(--white); overflow-x: hidden; }
+        body { font-family: 'Oswald', sans-serif; background-color: var(--dark); color: var(--white); overflow-x: hidden; scroll-behavior: smooth; }
 
         /* HEADER */
         header {
@@ -37,7 +37,6 @@
         /* HERO SECTION */
         .hero {
             height: 100vh;
-            /* Nova Imagem de Fundo com Filtro Escuro */
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), 
                         url('https://ce8dc832c.cloudimg.io/v7/_cs_/2023/03/64009a73383ec/3D_RD.png?width=1280&ci_sign=c4eba574a6ef37d2d9aa0d0d4f3832a7b0f95adf');
             background-size: cover;
@@ -55,14 +54,7 @@
             width: 100%;
         }
 
-        /* Títulos Ajustados para melhor Legibilidade */
-        .hero-left h1 { 
-            font-size: 3.5rem; 
-            line-height: 1.1; 
-            margin-bottom: 20px; 
-            text-transform: uppercase;
-            font-weight: 700;
-        }
+        .hero-left h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; }
         .hero-left h1 span { color: var(--orange); }
 
         .btn-cta {
@@ -81,22 +73,21 @@
         .btn-cta:hover { transform: scale(1.05); background: #e64500; }
 
         .hero-center { text-align: center; }
-        .hero-center img { 
-            width: 100%; 
-            max-width: 350px; 
-            filter: drop-shadow(0 0 20px rgba(255,77,0,0.3)); 
-        }
+        .hero-center img { width: 100%; max-width: 350px; filter: drop-shadow(0 0 20px rgba(255,77,0,0.3)); }
 
         .hero-right { text-align: left; padding-left: 20px; border-left: 2px solid var(--orange); }
         .hero-right h2 { color: var(--white); margin-bottom: 10px; font-size: 1.8rem; text-transform: uppercase; font-weight: 700; }
         .hero-right p { color: #ccc; font-weight: 300; line-height: 1.6; font-size: 1rem; }
 
-        /* SEÇÕES GERAIS */
-        .section-title { font-size: 3rem; text-align: center; margin-bottom: 40px; text-transform: uppercase; font-weight: 700; }
+        /* CATEGORIAS E MODELOS */
+        .section-modelos { padding: 80px 5%; }
+        .section-title { font-size: 3rem; text-align: center; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; }
         .section-title span { color: var(--orange); }
 
-        /* MODELOS PRONTOS - CARROSSEL */
-        .section-modelos { padding: 80px 5%; }
+        .category-filter { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+        .btn-filter { background: transparent; color: white; border: 1px solid var(--orange); padding: 8px 20px; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
+        .btn-filter.active, .btn-filter:hover { background: var(--orange); }
+
         .carousel {
             display: flex;
             overflow-x: auto;
@@ -108,50 +99,32 @@
         .carousel::-webkit-scrollbar { height: 8px; }
         .carousel::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 10px; }
 
-        .card {
-            min-width: 300px;
-            background: #1a1a1a;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #333;
-            transition: 0.3s;
-        }
+        .card { min-width: 300px; background: #1a1a1a; border-radius: 8px; overflow: hidden; border: 1px solid #333; transition: 0.3s; }
+        .card[data-visible="false"] { display: none; }
         .card:hover { border-color: var(--orange); }
         .card img { width: 100%; height: 250px; object-fit: cover; }
         .card-body { padding: 20px; text-align: center; }
         .card-body h3 { margin-bottom: 15px; font-size: 1.4rem; text-transform: uppercase; font-weight: 700; }
-        
-        /* FORMULÁRIO */
+
+        /* FORMULÁRIO DINÂMICO */
         .ideia-form { padding: 80px 5%; background: #0a0a0a; display: flex; flex-direction: column; align-items: center; }
         .box-form { background: #1a1a1a; padding: 40px; border-radius: 10px; width: 100%; max-width: 600px; border: 1px solid #333; }
-        .box-form input, .box-form select, .box-form textarea { width: 100%; padding: 12px; margin-top: 10px; background: #222; border: 1px solid #444; color: white; margin-bottom: 20px; font-family: 'Oswald', sans-serif; }
-        .btn-whats { background: #25D366; color: white; width: 100%; padding: 15px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; border-radius: 5px; font-family: 'Oswald', sans-serif; font-size: 1.1rem; }
+        .box-form label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--blue); text-transform: uppercase; font-size: 0.8rem; }
+        .box-form input, .box-form select, .box-form textarea { width: 100%; padding: 12px; margin-top: 5px; background: #222; border: 1px solid #444; color: white; margin-bottom: 20px; font-family: 'Oswald', sans-serif; }
+        
+        /* Esconder campos dinâmicos por padrão */
+        .dynamic-field { display: none; }
+        
+        .btn-whats { background: #25D366; color: white; width: 100%; padding: 15px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; border-radius: 5px; font-family: 'Oswald', sans-serif; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
-        /* FOOTER / REDES SOCIAIS */
-        footer {
-            padding: 60px 5% 30px;
-            background: #000;
-            text-align: center;
-            border-top: 2px solid var(--blue);
-        }
+        /* FOOTER */
+        footer { padding: 60px 5% 30px; background: #000; text-align: center; border-top: 2px solid var(--blue); }
         .footer-socials { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; }
         .footer-socials a { color: white; font-size: 2rem; transition: 0.3s; }
         .footer-socials a:hover { color: var(--orange); transform: translateY(-5px); }
-        
-        .btn-shopee {
-            background: #ff4500;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-radius: 5px;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
+        .btn-shopee { background: #ff4500; color: white; padding: 12px 30px; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 5px; display: inline-block; margin-bottom: 20px; }
         .footer-info { color: #555; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* RESPONSIVIDADE */
         @media (max-width: 900px) {
             .hero-container { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
             .hero { height: auto; padding-bottom: 60px; }
@@ -183,43 +156,54 @@
                 <h1>Transformamos pixels em <span>objetos reais</span>.</h1>
                 <a href="#modelos" class="btn-cta">Ver Modelos Exclusivos</a>
             </div>
-
             <div class="hero-center">
                 <img src="https://i.ibb.co/mrFGW2ct/e7badcf6-fb80-427e-9cba-3a3c774e43d0.png" alt="Logo Nollie 3D">
             </div>
-
             <div class="hero-right">
                 <h2>Sobre a Nollie 3D</h2>
-                <p>A Nollies 3D nasce da parceria de dois irmãos que tiraram ideias do papel.
-Unimos a cultura das ruas à tecnologia de ponta para criar modelagem 3D e impressão em filamento com precisão e estilo.
-
-Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele modelo que você sempre quis, transformamos pixels em objetos reais.</p>
+                <p>A Nollies 3D nasce da parceria de dois irmãos especialistas em modelagem 3D e impressão FDM. Unimos cultura street e tecnologia para criar peças com precisão e alma.</p>
             </div>
         </div>
     </section>
 
     <section id="modelos" class="section-modelos">
         <h2 class="section-title">Modelos <span>Prontos</span></h2>
-        <div class="carousel">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1631243265141-8608e678e079?w=500" alt="Impressora">
-                <div class="card-body">
-                    <h3>IMPRESSÃO SOB MEDIDA</h3>
-                    <button class="btn-cta" style="width: 100%;" onclick="escolher('Impressão Personalizada')">Orçar Agora</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://cdn.thingiverse.com/renders/bc/f1/d0/20/30/434676109968a306471e43343c9429c3_display_large.jpg" alt="Dragão">
-                <div class="card-body">
-                    <h3>DRAGÃO ARTICULADO</h3>
-                    <button class="btn-cta" style="width: 100%;" onclick="escolher('Dragão Articulado')">Orçar Agora</button>
-                </div>
-            </div>
-            <div class="card">
+        
+        <div class="category-filter">
+            <button class="btn-filter active" onclick="filterCategory('todos')">Todos</button>
+            <button class="btn-filter" onclick="filterCategory('utilidades')">Utilidades</button>
+            <button class="btn-filter" onclick="filterCategory('decoracao')">Decoração</button>
+            <button class="btn-filter" onclick="filterCategory('jogos')">Jogos</button>
+            <button class="btn-filter" onclick="filterCategory('diversos')">Diversos</button>
+        </div>
+
+        <div class="carousel" id="model-carousel">
+            <div class="card" data-category="decoracao">
                 <img src="https://cdn.thingiverse.com/renders/e9/89/3f/82/53/339a06692224734563a3d548b871ed3d_display_large.jpg" alt="Vaso">
                 <div class="card-body">
                     <h3>VASO LOW POLY</h3>
-                    <button class="btn-cta" style="width: 100%;" onclick="escolher('Vaso Low Poly')">Orçar Agora</button>
+                    <button class="btn-cta" style="width: 100%;" onclick="escolher('Vaso Low Poly', 'https://www.thingiverse.com/thing:186720')">Orçar Agora</button>
+                </div>
+            </div>
+            <div class="card" data-category="jogos">
+                <img src="https://cdn.thingiverse.com/renders/bc/f1/d0/20/30/434676109968a306471e43343c9429c3_display_large.jpg" alt="Dragão">
+                <div class="card-body">
+                    <h3>DRAGÃO ARTICULADO</h3>
+                    <button class="btn-cta" style="width: 100%;" onclick="escolher('Dragão Articulado', 'https://www.thingiverse.com/thing:5153330')">Orçar Agora</button>
+                </div>
+            </div>
+            <div class="card" data-category="utilidades">
+                <img src="https://cdn.thingiverse.com/renders/7c/4f/2e/7d/5a/04b8b693e54f762f026b2f4f24f0c6e2_display_large.jpg" alt="Suporte">
+                <div class="card-body">
+                    <h3>SUPORTE CELULAR</h3>
+                    <button class="btn-cta" style="width: 100%;" onclick="escolher('Suporte Celular', 'https://www.thingiverse.com/thing:2194278')">Orçar Agora</button>
+                </div>
+            </div>
+            <div class="card" data-category="diversos">
+                <img src="https://images.unsplash.com/photo-1631243265141-8608e678e079?w=500" alt="Personalizado">
+                <div class="card-body">
+                    <h3>PEÇA PERSONALIZADA</h3>
+                    <button class="btn-cta" style="width: 100%;" onclick="escolher('Impressão Sob Medida', 'Personalizado')">Orçar Agora</button>
                 </div>
             </div>
         </div>
@@ -228,16 +212,32 @@ Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele model
     <section id="ideia" class="ideia-form">
         <h2 class="section-title">Mande sua <span>Ideia</span></h2>
         <div class="box-form">
-            <label>Tipo de Projeto</label>
-            <select id="tipo">
-                <option>Link do Thingiverse/Cults</option>
-                <option>Tenho o Arquivo STL</option>
-                <option>Preciso de uma modelagem</option>
+            <label for="tipo">Como quer começar?</label>
+            <select id="tipo" onchange="toggleFields()">
+                <option value="link">Tenho o link (Thingiverse/Cults)</option>
+                <option value="arquivo">Tenho o arquivo (STL/OBJ)</option>
+                <option value="ideia">Tenho uma ideia / Preciso de modelagem</option>
             </select>
-            <label>Detalhes</label>
-            <textarea id="detalhes" rows="4" placeholder="Descreva sua ideia ou cole o link..."></textarea>
+
+            <div id="field-link" class="dynamic-field" style="display: block;">
+                <label>Cole o link do modelo aqui:</label>
+                <input type="text" id="input-link" placeholder="https://www.thingiverse.com/thing:...">
+            </div>
+
+            <div id="field-arquivo" class="dynamic-field">
+                <label>Anexar arquivo:</label>
+                <p style="font-size: 0.8rem; color: #888; margin-bottom: 10px;">*Como o WhatsApp não aceita arquivos direto via link, descreva o nome do arquivo e prepare para enviar na conversa.*</p>
+                <input type="text" id="input-arquivo" placeholder="Nome do arquivo ou detalhes técnicos">
+            </div>
+
+            <div id="field-ideia" class="dynamic-field">
+                <label>Descreva sua ideia em detalhes:</label>
+                <textarea id="input-ideia" rows="4" placeholder="Ex: Preciso de um suporte para skate com logo personalizado..."></textarea>
+                <p style="font-size: 0.8rem; color: #888;">*Você poderá enviar fotos de referência diretamente no chat.*</p>
+            </div>
+
             <button class="btn-whats" onclick="enviar()">
-                <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                <i class="fab fa-whatsapp"></i> Enviar Orçamento
             </button>
         </div>
     </section>
@@ -245,8 +245,8 @@ Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele model
     <footer>
         <div class="footer-socials">
             <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
         </div>
         <a href="https://shopee.com.br" target="_blank" class="btn-shopee">
             <i class="fas fa-shopping-bag"></i> Nossa Loja na Shopee
@@ -258,21 +258,56 @@ Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele model
     </footer>
 
     <script>
-        function escolher(nome) {
-            document.getElementById('detalhes').value = "Olá! Gostaria de um orçamento para o modelo: " + nome;
-            document.getElementById('ideia').scrollIntoView({behavior: 'smooth'});
+        // Lógica de Filtro de Categorias
+        function filterCategory(cat) {
+            const cards = document.querySelectorAll('.card');
+            const buttons = document.querySelectorAll('.btn-filter');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if(cat === 'todos' || card.getAttribute('data-category') === cat) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
         }
 
+        // Lógica para mostrar/esconder campos do formulário
+        function toggleFields() {
+            const tipo = document.getElementById('tipo').value;
+            document.querySelectorAll('.dynamic-field').forEach(div => div.style.display = 'none');
+            document.getElementById('field-' + tipo).style.display = 'block';
+        }
+
+        // Função ao clicar em "Orçar Agora" no card
+        function escolher(nome, link) {
+            document.getElementById('tipo').value = 'link';
+            toggleFields();
+            document.getElementById('input-link').value = link;
+            document.getElementById('ideia').scrollIntoView({behavior: 'smooth'});
+            // Pequeno feedback visual
+            const inputLink = document.getElementById('input-link');
+            inputLink.style.borderColor = "var(--blue)";
+            setTimeout(() => inputLink.style.borderColor = "#444", 2000);
+        }
+
+        // Envio para WhatsApp
         function enviar() {
-            const fone = "5513997372464"; // Número atualizado (DDI + DDD + Numero)
-            const msg = document.getElementById('detalhes').value;
-            if(!msg) {
-                alert("Por favor, descreva sua ideia ou escolha um modelo.");
-                return;
-            }
-            window.open(`https://wa.me/${fone}?text=${encodeURIComponent('*ORÇAMENTO Nollie 3D*\n\n' + msg)}`, '_blank');
+            const fone = "5513997372464";
+            const tipo = document.getElementById('tipo').value;
+            let detalhes = "";
+
+            if(tipo === 'link') detalhes = "Link do Modelo: " + document.getElementById('input-link').value;
+            if(tipo === 'arquivo') detalhes = "Informações do Arquivo: " + document.getElementById('input-arquivo').value;
+            if(tipo === 'ideia') detalhes = "Descrição da Ideia: " + document.getElementById('input-ideia').value;
+
+            const textoFinal = `*SOLICITAÇÃO DE ORÇAMENTO - NOLLIE 3D*\n\n*Tipo:* ${tipo.toUpperCase()}\n*Detalhes:* ${detalhes}`;
+            
+            window.open(`https://wa.me/${fone}?text=${encodeURIComponent(textoFinal)}`, '_blank');
         }
     </script>
-
 </body>
 </html>
