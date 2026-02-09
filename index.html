@@ -3,106 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Loja 3D | Orçamentos e Modelos</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Nollies 3D | Inovação Impressa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #ff4d00; /* Laranja Industrial */
+            --bg-dark: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --text-light: #f5f5f5;
+            --whatsapp: #25D366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* HEADER */
+        header {
+            background: rgba(0,0,0,0.9);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a:hover { color: var(--primary); }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(45deg, rgba(0,0,0,0.8), rgba(15,15,15,0.4)), url('https://images.unsplash.com/photo-1572985445678-383794b1509a?q=80&w=2070');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; color: #ccc; }
+
+        /* SEÇÕES GERAIS */
+        section { padding: 100px 10%; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .section-title span { color: var(--primary); }
+
+        /* SOBRE A NOLLIES */
+        .sobre-container { display: flex; align-items: center; gap: 50px; }
+        .sobre-text { flex: 1; }
+        .sobre-img { flex: 1; border-radius: 20px; overflow: hidden; border: 2px solid var(--primary); }
+        .sobre-img img { width: 100%; display: block; }
+
+        /* MODELOS / VITRINE */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { 
+            background: var(--card-bg); 
+            border-radius: 15px; 
+            overflow: hidden; 
+            transition: 0.3s;
+            border: 1px solid #333;
+        }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-body { padding: 20px; }
+        .btn-card { 
+            background: var(--primary); 
+            color: white; 
+            padding: 10px; 
+            border: none; 
+            width: 100%; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-weight: bold;
+        }
+
+        /* FORMULÁRIO "MANDE SUA IDEIA" */
+        .form-box { 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 20px; 
+            max-width: 700px; 
+            margin: 0 auto; 
+        }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; color: #aaa; }
+        input, select, textarea { 
+            width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 8px; 
+        }
+        .btn-whats { 
+            background: var(--whatsapp); 
+            width: 100%; 
+            padding: 15px; 
+            border-radius: 8px; 
+            border: none; 
+            font-size: 1.1rem; 
+            font-weight: bold; 
+            cursor: pointer;
+            color: white;
+        }
+
+        /* FOOTER & REDES */
+        footer { background: #000; padding: 50px 10%; text-align: center; border-top: 1px solid #333; }
+        .social-links { margin: 20px 0; font-size: 2rem; display: flex; justify-content: center; gap: 30px; }
+        .social-links a:hover { color: var(--primary); }
+        .shopee-btn { background: #ff4500; color: white; padding: 10px 20px; border-radius: 5px; display: inline-block; margin-top: 10px; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .sobre-container { flex-direction: column; }
+            nav ul { display: none; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
+        <div class="logo">NOLLIES 3D</div>
         <nav>
-            <div class="logo"><i class="fas fa-cube"></i> TECH<strong>3D</strong></div>
             <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#vitrine">Modelos</a></li>
-                <li><a href="#orcamento">Orçamento</a></li>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#modelos">Modelos</a></li>
+                <li><a href="#ideia">Mande sua Ideia</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Impressão 3D de Alta Qualidade</h1>
-            <p>Escolha um modelo famoso ou envie seu próprio projeto para orçamento.</p>
-            <a href="#vitrine" class="btn-main">Ver Catálogo</a>
+    <section id="inicio" class="hero">
+        <h1>Transformamos pixels em <span>objetos reais</span>.</h1>
+        <p>A Nollies 3D traz o melhor da impressão FDM e Resina para sua casa ou empresa.</p>
+        <a href="#modelos" class="btn-card" style="width: auto; padding: 15px 40px;">Ver Catálogo</a>
+    </section>
+
+    <section id="sobre">
+        <div class="sobre-container">
+            <div class="sobre-img">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800" alt="Impressora 3D">
+            </div>
+            <div class="sobre-text">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Sobre a <span>Nollies</span></h2>
+                <p>Nascida da paixão pela fabricação digital, a Nollies 3D especializou-se em oferecer soluções personalizadas. Seja para colecionáveis de alta definição em resina ou peças funcionais e protótipos em plástico de alta resistência, nossa missão é entregar qualidade excepcional.</p>
+            </div>
         </div>
     </section>
 
-    <section id="vitrine" class="container-vitrine">
-        <h2 class="titulo-sessao">Modelos Populares (Thingiverse)</h2>
-        <p>Clique em um modelo para solicitar o orçamento automático.</p>
-        
-        <div class="grid-modelos">
-            <div class="card-modelo">
+    <section id="modelos">
+        <h2 class="section-title">Modelos <span>Prontos</span></h2>
+        <div class="grid">
+            <div class="card">
                 <img src="https://cdn.thingiverse.com/renders/e9/89/3f/82/53/339a06692224734563a3d548b871ed3d_display_large.jpg" alt="Vaso">
-                <div class="info-modelo">
-                    <h3>Vaso Espiral Low Poly</h3>
-                    <p>Decoração moderna para mesas e estantes.</p>
-                    <button onclick="selecionarModelo('Vaso Espiral', 'https://www.thingiverse.com/thing:186720')">Selecionar</button>
+                <div class="card-body">
+                    <h3>Vaso Espiral</h3>
+                    <button class="btn-card" onclick="pedir('Vaso Espiral', 'https://www.thingiverse.com/thing:186720')">Pedir Orçamento</button>
                 </div>
             </div>
-
-            <div class="card-modelo">
-                <img src="https://cdn.thingiverse.com/renders/7c/4f/2e/7d/5a/04b8b693e54f762f026b2f4f24f0c6e2_display_large.jpg" alt="Suporte">
-                <div class="info-modelo">
-                    <h3>Suporte Celular Universal</h3>
-                    <p>Ajustável e muito resistente.</p>
-                    <button onclick="selecionarModelo('Suporte Celular', 'https://www.thingiverse.com/thing:2194278')">Selecionar</button>
-                </div>
-            </div>
-
-            <div class="card-modelo">
-                <img src="https://cdn.thingiverse.com/renders/bc/f1/d0/20/30/434676109968a306471e43343c9429c3_display_large.jpg" alt="Articulado">
-                <div class="info-modelo">
+            <div class="card">
+                <img src="https://cdn.thingiverse.com/renders/bc/f1/d0/20/30/434676109968a306471e43343c9429c3_display_large.jpg" alt="Dragão">
+                <div class="card-body">
                     <h3>Dragão Articulado</h3>
-                    <p>O modelo mais famoso para testes de precisão.</p>
-                    <button onclick="selecionarModelo('Dragão Articulado', 'https://www.thingiverse.com/thing:5153330')">Selecionar</button>
+                    <button class="btn-card" onclick="pedir('Dragão Articulado', 'https://www.thingiverse.com/thing:5153330')">Pedir Orçamento</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://cdn.thingiverse.com/renders/7c/4f/2e/7d/5a/04b8b693e54f762f026b2f4f24f0c6e2_display_large.jpg" alt="Suporte">
+                <div class="card-body">
+                    <h3>Suporte de Celular</h3>
+                    <button class="btn-card" onclick="pedir('Suporte Celular', 'https://www.thingiverse.com/thing:2194278')">Pedir Orçamento</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="orcamento" class="container-form">
-        <div class="card-form">
-            <h2><i class="fab fa-whatsapp"></i> Solicitar Orçamento</h2>
-            
-            <div class="form-group">
-                <label>Origem do Projeto:</label>
-                <select id="origem" onchange="toggleInputs()">
-                    <option value="thingiverse">Link do Thingiverse / Cults3D</option>
-                    <option value="proprio">Tenho meu próprio arquivo (.STL)</option>
+    <section id="ideia">
+        <h2 class="section-title">Mande sua <span>Ideia</span></h2>
+        <div class="form-box">
+            <div class="input-group">
+                <label>Origem do Modelo</label>
+                <select id="origem">
+                    <option value="Thingiverse">Tenho link (Thingiverse/Cults)</option>
+                    <option value="Arquivo">Tenho arquivo próprio (.STL)</option>
+                    <option value="Desenho">Tenho uma ideia / Preciso de projeto</option>
                 </select>
             </div>
-
-            <div id="group-link" class="form-group">
-                <label>Link do Modelo:</label>
-                <input type="text" id="linkModel" placeholder="https://www.thingiverse.com/...">
+            <div class="input-group">
+                <label>Link ou Descrição</label>
+                <textarea id="detalhes" rows="4" placeholder="Cole o link aqui ou descreva o que você imagina..."></textarea>
             </div>
-
-            <div class="form-group">
-                <label>Material:</label>
-                <select id="material">
-                    <option value="PLA">PLA (Cores variadas)</option>
-                    <option value="PETG">PETG (Resistência Térmica)</option>
-                    <option value="Resina">Resina (Alta Definição)</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Observações:</label>
-                <textarea id="obs" rows="3" placeholder="Cor, tamanho aproximado, etc..."></textarea>
-            </div>
-
-            <button class="btn-whatsapp" onclick="enviarWhatsApp()">
-                <i class="fab fa-whatsapp"></i> Enviar para Orçamento
+            <button class="btn-whats" onclick="enviarWhats()">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento via WhatsApp
             </button>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Tech3D Impressões. Todos os direitos reservados.</p>
+        <div class="logo">NOLLIES 3D</div>
+        <p>Siga-nos nas redes sociais:</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <a href="https://shopee.com.br/SUA_LOJA" target="_blank" class="shopee-btn">
+            <i class="fas fa-shopping-bag"></i> Visite nossa Loja na Shopee
+        </a>
+        <p style="margin-top: 40px; font-size: 0.8rem; color: #555;">&copy; 2026 Nollies 3D. Desenvolvido com tecnologia e precisão.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        const WHATSAPP_NUMBER = "5511999999999"; // SUBSTITUA PELO SEU NÚMERO
+
+        function pedir(nome, link) {
+            document.getElementById('detalhes').value = `Gostaria de um orçamento para o modelo: ${nome}\nLink: ${link}`;
+            window.location.href = "#ideia";
+        }
+
+        function enviarWhats() {
+            const origem = document.getElementById('origem').value;
+            const detalhes = document.getElementById('detalhes').value;
+            
+            const texto = `*NOVO PEDIDO NOLLIES 3D*\n\n*Tipo:* ${origem}\n*Detalhes:* ${detalhes}`;
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`;
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
