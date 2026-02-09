@@ -4,14 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nollies 3D | Street Style Printing</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --orange: #ff4d00;
+            --blue: #00e5ff;
+            --dark: #121212;
+            --card: #1e1e1e;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Oswald', sans-serif; 
+            background-color: var(--dark); 
+            color: var(--white);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* HEADER FIXO */
+        header {
+            background: rgba(0,0,0,0.9);
+            padding: 10px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--orange);
+        }
+
+        .logo-nav img { height: 45px; display: block; }
+
+        nav ul { display: flex; list-style: none; gap: 15px; }
+        nav a { color: var(--white); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; }
+        nav a:hover { color: var(--orange); }
+
+        /* HERO - TOPO DO SITE */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1572985445678-383794b1509a?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-logo { width: 300px; max-width: 80%; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 77, 0, 0.4)); }
+        .hero h1 { font-family: 'Bangers', cursive; font-size: 4rem; line-height: 1; margin-bottom: 15px; }
+        .hero h1 span { color: var(--orange); text-shadow: 3px 3px var(--blue); }
+        .hero p { font-size: 1.2rem; color: #ccc; margin-bottom: 30px; max-width: 600px; }
+
+        .btn-main { 
+            background: var(--orange); color: white; padding: 15px 40px; border-radius: 5px; 
+            text-decoration: none; font-weight: bold; text-transform: uppercase;
+            box-shadow: 4px 4px 0px var(--blue); transition: 0.2s;
+        }
+        .btn-main:hover { transform: scale(1.05); }
+
+        /* SEÇÃO SOBRE */
+        .sobre { padding: 80px 10%; text-align: center; background: #000; }
+        .title { font-family: 'Bangers', cursive; font-size: 3rem; margin-bottom: 30px; }
+        .title span { color: var(--orange); }
+        .sobre p { font-size: 1.1rem; color: #aaa; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+
+        /* MODELOS COM SCROLL LATERAL */
+        .modelos-container { padding: 60px 0; background: var(--dark); }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 5%;
+            scrollbar-width: none; /* Firefox */
+        }
+        .carousel::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+        .card {
+            min-width: 280px;
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: 0.3s;
+            flex-shrink: 0;
+        }
+        .card:hover { border-color: var(--orange); transform: translateY(-10px); }
+        
+        /* Destaque para o primeiro card como na imagem */
+        .card-destaque { border: 2px solid var(--orange); box-shadow: 0 0 20px rgba(255, 77, 0, 0.2); }
+
+        .card img { width: 100%; height: 220px; object-fit: cover; }
+        .card-info { padding: 20px; text-align: center; }
+        .card-info h3 { font-family: 'Bangers', cursive; font-size: 1.5rem; margin-bottom: 15px; }
+
+        .btn-card { 
+            background: var(--orange); color: white; border: none; padding: 10px 20px; 
+            width: 100%; border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase;
+        }
+
+        /* FORMULÁRIO */
+        .ideia-section { padding: 80px 10%; background: #0a0a0a; }
+        .form-box { 
+            background: var(--card); padding: 40px; border-radius: 15px; 
+            max-width: 600px; margin: 0 auto; border: 1px solid #333; 
+        }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 10px; color: var(--blue); font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
+        input, select, textarea { 
+            width: 100%; padding: 12px; background: #111; border: 1px solid #444; color: white; border-radius: 5px; 
+        }
+
+        .btn-whats { 
+            background: #25D366; color: white; width: 100%; padding: 18px; 
+            border: none; border-radius: 5px; font-size: 1.2rem; font-weight: bold; 
+            cursor: pointer; text-transform: uppercase;
+        }
+
+        /* RODAPÉ E REDES */
+        footer { padding: 40px 10%; background: #000; text-align: center; border-top: 2px solid var(--blue); }
+        .socials { font-size: 2rem; margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; }
+        .socials a { color: white; transition: 0.3s; }
+        .socials a:hover { color: var(--orange); }
+        .shopee { background: #ff4500; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-area">
+        <div class="logo-nav">
             <img src="https://i.ibb.co/DDs1QKNx/5569122f-ebf4-45fb-b471-f4e24dcad60a.png" alt="Nollies 3D">
         </div>
         <nav>
@@ -25,80 +161,94 @@
     </header>
 
     <section id="inicio" class="hero">
-        <div class="hero-content">
-            <img src="https://i.ibb.co/DDs1QKNx/5569122f-ebf4-45fb-b471-f4e24dcad60a.png" class="hero-logo" alt="Logo Nollies">
-            <h1>TRANSFORMAMOS PIXELS EM <span>OBJETOS REAIS</span></h1>
-            <p>Cultura urbana e fabricação digital de alta precisão.</p>
-            <a href="#modelos" class="btn-cta">Ver Modelos Exclusivos</a>
-        </div>
+        <img src="https://i.ibb.co/DDs1QKNx/5569122f-ebf4-45fb-b471-f4e24dcad60a.png" class="hero-logo" alt="Nollies Logo">
+        <h1>TRANSFORMAMOS PIXELS EM <span>OBJETOS REAIS</span></h1>
+        <p>Impressão 3D com estilo urbano, precisão industrial e a alma do skate.</p>
+        <a href="#modelos" class="btn-main">Ver Modelos</a>
     </section>
 
-    <section id="modelos" class="modelos-section">
-        <h2 class="title">MODELOS <span>PRONTOS</span></h2>
-        
-        <div class="carousel-container">
+    <section id="sobre" class="sobre">
+        <h2 class="title">SOBRE A <span>NOLLIES 3D</span></h2>
+        <p>A Nollies 3D une a cultura street com a inovação tecnológica. Somos especialistas em transformar arquivos digitais em peças físicas de alta qualidade, seja em resina para máximo detalhe ou FDM para resistência.</p>
+    </section>
+
+    <section id="modelos" class="modelos-container">
+        <h2 class="title" style="text-align: center;">MODELOS <span>PRONTOS</span></h2>
+        <div class="carousel">
             <div class="card card-destaque">
-                <img src="https://images.unsplash.com/photo-1631243265141-8608e678e079?q=80&w=1000" alt="Impressora 3D">
-                <div class="card-content">
-                    <h3>ESTAÇÃO DE IMPRESSÃO</h3>
-                    <button class="btn-order" onclick="setModelo('Impressão Personalizada', 'Personalizado')">Orçar Agora</button>
+                <img src="https://images.unsplash.com/photo-1631243265141-8608e678e079?q=80&w=500" alt="Destaque">
+                <div class="card-info">
+                    <h3>IMPRESSÃO SOB MEDIDA</h3>
+                    <button class="btn-card" onclick="pedir('Impressão Personalizada', 'Personalizado')">Orçar Agora</button>
                 </div>
             </div>
-
             <div class="card">
                 <img src="https://cdn.thingiverse.com/renders/e9/89/3f/82/53/339a06692224734563a3d548b871ed3d_display_large.jpg" alt="Vaso">
-                <div class="card-content">
-                    <h3>VASO ESPIRAL</h3>
-                    <button class="btn-order" onclick="setModelo('Vaso Espiral', 'https://www.thingiverse.com/thing:186720')">Pedir Orçamento</button>
+                <div class="card-info">
+                    <h3>VASO LOW POLY</h3>
+                    <button class="btn-card" onclick="pedir('Vaso Low Poly', 'Link Thingiverse')">Orçar Agora</button>
                 </div>
             </div>
-
             <div class="card">
                 <img src="https://cdn.thingiverse.com/renders/bc/f1/d0/20/30/434676109968a306471e43343c9429c3_display_large.jpg" alt="Dragão">
-                <div class="card-content">
+                <div class="card-info">
                     <h3>DRAGÃO ARTICULADO</h3>
-                    <button class="btn-order" onclick="setModelo('Dragão Articulado', 'https://www.thingiverse.com/thing:5153330')">Pedir Orçamento</button>
+                    <button class="btn-card" onclick="pedir('Dragão Articulado', 'Link Thingiverse')">Orçar Agora</button>
                 </div>
             </div>
-
             <div class="card">
                 <img src="https://cdn.thingiverse.com/renders/7c/4f/2e/7d/5a/04b8b693e54f762f026b2f4f24f0c6e2_display_large.jpg" alt="Suporte">
-                <div class="card-content">
+                <div class="card-info">
                     <h3>SUPORTE CELULAR</h3>
-                    <button class="btn-order" onclick="setModelo('Suporte Celular', 'https://www.thingiverse.com/thing:2194278')">Pedir Orçamento</button>
+                    <button class="btn-card" onclick="pedir('Suporte Celular', 'Link Thingiverse')">Orçar Agora</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="ideia">
-        <h2 class="title">MANDE SUA <span>IDEIA</span></h2>
-        <div class="form-container">
+    <section id="ideia" class="ideia-section">
+        <h2 class="title" style="text-align: center;">MANDE SUA <span>IDEIA</span></h2>
+        <div class="form-box">
             <div class="input-group">
-                <label>Origem do Projeto</label>
+                <label>Origem do Modelo</label>
                 <select id="tipo">
-                    <option value="Thingiverse">Link do Thingiverse / Cults3D</option>
-                    <option value="Arquivo">Tenho Arquivo próprio</option>
-                    <option value="Ideia">Apenas uma ideia</option>
+                    <option value="Link">Tenho Link (Thingiverse/Cults)</option>
+                    <option value="Arquivo">Tenho Arquivo STL</option>
+                    <option value="Ideia">Tenho apenas uma ideia</option>
                 </select>
             </div>
             <div class="input-group">
-                <label>Detalhes (Link ou Descrição)</label>
-                <textarea id="info" rows="5" placeholder="Cole o link ou descreva sua ideia..."></textarea>
+                <label>Descrição ou Link</label>
+                <textarea id="detalhes" rows="4" placeholder="Descreva sua ideia ou cole o link aqui..."></textarea>
             </div>
-            <button class="btn-whatsapp" onclick="enviar()">
-                <i class="fab fa-whatsapp"></i> Solicitar Orçamento via WhatsApp
+            <button class="btn-whats" onclick="enviar()">
+                <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
             </button>
-        </div>
-        
-        <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="https://shopee.com.br" target="_blank" class="btn-shopee">Loja na Shopee</a>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <footer>
+        <div class="socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <a href="https://shopee.com.br" class="shopee">VISITE NOSSA SHOPEE</a>
+        <p style="color: #444; margin-top: 20px; font-size: 0.8rem;">&copy; 2026 NOLLIES 3D - DO DIGITAL PARA O REAL.</p>
+    </footer>
+
+    <script>
+        function pedir(nome, link) {
+            document.getElementById('detalhes').value = `Olá! Tenho interesse no modelo: ${nome}\n${link}`;
+            document.getElementById('ideia').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function enviar() {
+            const fone = "5511999999999"; // TROQUE PELO SEU NÚMERO
+            const tipo = document.getElementById('tipo').value;
+            const detalhes = document.getElementById('detalhes').value;
+            const msg = encodeURIComponent(`*ORÇAMENTO NOLLIES 3D*\n\n*Tipo:* ${tipo}\n*Detalhes:* ${detalhes}`);
+            window.open(`https://wa.me/${fone}?text=${msg}`, '_blank');
+        }
+    </script>
 </body>
 </html>
