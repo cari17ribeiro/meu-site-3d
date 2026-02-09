@@ -3,385 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nollies 3D | Inovação Impressa</title>
+    <title>Nollies 3D | Street Style Printing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-orange: #ff4d00; /* Laranja do seu logo */
-            --primary-white: #f0f0f0; /* Branco para textos */
-            --primary-blue: #00bcd4; /* Azul/Ciano do seu logo */
-            --bg-dark: #121212; /* Fundo principal escuro */
-            --card-bg: #222222; /* Fundo dos cards */
-            --border-color: #444444; /* Cor da borda */
-            --text-color: #e0e0e0; /* Cor padrão do texto */
-            --whatsapp-green: #25D366;
-        }
-
-        /* RESET BÁSICO E FONTES */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-dark); 
-            color: var(--text-color); 
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-        a { text-decoration: none; color: inherit; }
-        h1, h2, h3 { font-family: 'Bangers', cursive; letter-spacing: 1.5px; }
-
-        /* HEADER */
-        header {
-            background: rgba(0,0,0,0.9);
-            padding: 0.8rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .logo-header { 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            font-size: 1.6rem; 
-            font-weight: bold; 
-            color: var(--primary-white);
-            text-transform: uppercase;
-        }
-        .logo-header img { height: 40px; } /* Ajuste o tamanho do logo no header */
-        nav ul { display: flex; list-style: none; gap: 25px; }
-        nav a { color: var(--primary-white); font-weight: 500; text-transform: uppercase; }
-        nav a:hover { color: var(--primary-orange); }
-
-        /* HERO SECTION */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1596245028045-849cfc46a6f6?q=80&w=2070&auto=format&fit=crop'); /* Fundo com estilo grafite */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            color: var(--primary-white);
-        }
-        .hero-logo { width: 300px; margin-bottom: 2rem; } /* Ajuste o tamanho do logo principal */
-        .hero h1 { font-size: 4.5rem; margin-bottom: 1rem; color: var(--primary-white); text-shadow: 4px 4px 0px var(--primary-orange); }
-        .hero p { font-size: 1.3rem; max-width: 700px; margin-bottom: 3rem; color: #ccc; }
-        .btn-main { 
-            background: var(--primary-orange); 
-            color: white; 
-            padding: 15px 45px; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-            text-transform: uppercase;
-        }
-        .btn-main:hover { background-color: #ff6a27; }
-
-        /* SEÇÕES GERAIS */
-        section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { 
-            text-align: center; 
-            font-size: 3.2rem; 
-            margin-bottom: 60px; 
-            color: var(--primary-white);
-            text-shadow: 3px 3px 0px rgba(0,0,0,0.5);
-        }
-        .section-title span { color: var(--primary-orange); }
-
-        /* SOBRE A NOLLIES */
-        .sobre-container { 
-            display: flex; 
-            align-items: center; 
-            gap: 50px; 
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-        }
-        .sobre-text { flex: 1; }
-        .sobre-text h2 { text-align: left; margin-bottom: 25px; font-size: 2.5rem; }
-        .sobre-text p { font-size: 1.1rem; line-height: 1.8; color: var(--text-color); }
-        .sobre-img { flex: 1; border-radius: 15px; overflow: hidden; border: 3px solid var(--primary-orange); box-shadow: 0 0 20px rgba(0,255,255,0.2); }
-        .sobre-img img { width: 100%; display: block; height: auto; }
-
-        /* MODELOS / VITRINE */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-        .card { 
-            background: var(--card-bg); 
-            border-radius: 15px; 
-            overflow: hidden; 
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        .card:hover { transform: translateY(-15px); border-color: var(--primary-blue); }
-        .card img { width: 100%; height: 280px; object-fit: cover; }
-        .card-body { padding: 25px; text-align: center; }
-        .card-body h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--primary-white); }
-        .btn-card { 
-            background: var(--primary-orange); 
-            color: white; 
-            padding: 12px 25px; 
-            border: none; 
-            border-radius: 8px; 
-            cursor: pointer; 
-            font-weight: bold;
-            font-size: 1rem;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
-        }
-        .btn-card:hover { background-color: #ff6a27; }
-
-        /* FORMULÁRIO "MANDE SUA IDEIA" */
-        .form-box { 
-            background: var(--card-bg); 
-            padding: 50px; 
-            border-radius: 20px; 
-            max-width: 800px; 
-            margin: 0 auto; 
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .input-group { margin-bottom: 25px; }
-        label { display: block; margin-bottom: 10px; color: var(--primary-white); font-weight: bold; font-size: 1.1rem; }
-        input, select, textarea { 
-            width: 100%; 
-            padding: 15px; 
-            background: #333; 
-            border: 1px solid #555; 
-            color: var(--primary-white); 
-            border-radius: 10px; 
-            font-size: 1rem;
-        }
-        textarea { resize: vertical; min-height: 100px; }
-        .btn-whats { 
-            background: var(--whatsapp-green); 
-            width: 100%; 
-            padding: 18px; 
-            border-radius: 10px; 
-            border: none; 
-            font-size: 1.3rem; 
-            font-weight: bold; 
-            cursor: pointer;
-            color: white;
-            transition: background-color 0.3s ease;
-            text-transform: uppercase;
-        }
-        .btn-whats:hover { background-color: #1eb956; }
-
-        /* FOOTER & REDES */
-        footer { 
-            background: #000; 
-            padding: 60px 5%; 
-            text-align: center; 
-            border-top: 1px solid var(--border-color); 
-            color: var(--text-color);
-        }
-        footer .logo { font-size: 2rem; margin-bottom: 20px; color: var(--primary-orange); }
-        .social-links { margin: 30px 0; font-size: 2.5rem; display: flex; justify-content: center; gap: 40px; }
-        .social-links a { color: var(--primary-white); transition: color 0.3s ease; }
-        .social-links a:hover { color: var(--primary-orange); }
-        .shopee-btn { 
-            background: #ee4d2d; /* Cor da Shopee */ 
-            color: white; 
-            padding: 12px 30px; 
-            border-radius: 8px; 
-            display: inline-block; 
-            margin-top: 20px; 
-            font-weight: bold; 
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-        .shopee-btn:hover { background-color: #ff6a4d; }
-        footer p { font-size: 0.9rem; margin-top: 50px; color: #888; }
-
-        /* MEDIA QUERIES PARA RESPONSIVIDADE */
-        @media (max-width: 1024px) {
-            .hero h1 { font-size: 3.5rem; }
-            .section-title { font-size: 2.8rem; }
-        }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 10px; padding: 0.8rem 20px; }
-            nav ul { justify-content: center; width: 100%; padding-bottom: 10px; }
-            .logo-header { margin-bottom: 10px; }
-            .hero { height: auto; min-height: 80vh; padding-top: 120px; padding-bottom: 50px; }
-            .hero h1 { font-size: 2.8rem; }
-            .hero p { font-size: 1rem; }
-            .sobre-container { flex-direction: column; text-align: center; padding: 30px; }
-            .sobre-text h2 { text-align: center; }
-            .section-title { font-size: 2.2rem; }
-            .form-box { padding: 30px; }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 0.9rem; }
-            .btn-main { padding: 10px 30px; font-size: 1rem; }
-            .section-title { font-size: 1.8rem; margin-bottom: 40px; }
-            .logo-header img { height: 30px; }
-            .logo-header { font-size: 1.2rem; }
-            nav a { font-size: 0.9rem; }
-            .grid { gap: 20px; }
-            .card-body h3 { font-size: 1.5rem; }
-            .social-links { font-size: 2rem; gap: 20px; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo-header">
-            <img src="https://i.imgur.com/your-logo-path.png" alt="Nollies 3D Logo"> Nollies 3D
-        </div>
+        <div class="logo-text">NOLLIES 3D</div>
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre Nollies</a></li>
-                <li><a href="#modelos">Modelos Prontos</a></li>
-                <li><a href="#ideia">Mande sua Ideia</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#modelos">Modelos</a></li>
+                <li><a href="#ideia">Sua Ideia</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="inicio" class="hero">
-        <img src="https://i.imgur.com/your-logo-path.png" alt="Nollies 3D Logo Grande" class="hero-logo"> <h1>Transformamos pixels em <span>objetos reais</span>.</h1>
-        <p>A Nollies 3D traz o melhor da impressão FDM e Resina, com o estilo e a precisão que você busca.</p>
-        <a href="#modelos" class="btn-main">Ver Modelos Exclusivos</a>
+        <h1>TRANSFORMAMOS PIXELS EM <span>OBJETOS REAIS</span></h1>
+        <p>A cultura urbana encontra a fabricação digital. Impressões de alta qualidade com a pegada da Nollies 3D.</p>
+        <a href="#modelos" class="btn-cta">Explorar Catálogo</a>
     </section>
 
     <section id="sobre">
-        <h2 class="section-title">Sobre a <span>Nollies 3D</span></h2>
-        <div class="sobre-container">
-            <div class="sobre-img">
-                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop" alt="Impressora 3D">
-            </div>
-            <div class="sobre-text">
-                <p>Nascida da energia da cultura urbana e da paixão pela inovação, a **Nollies 3D** vai além da simples impressão. Somos criadores, transformando suas ideias mais arrojadas em realidade tátil. Com tecnologia de ponta em impressão FDM e Resina, garantimos detalhes incríveis e acabamento impecável.</p>
-                <p>De colecionáveis vibrantes a protótipos funcionais, cada peça é feita sob medida com a qualidade e o estilo que só a Nollies 3D oferece. Deixe sua marca no mundo real conosco!</p>
-            </div>
-        </div>
+        <h2 class="title">SOBRE A <span>NOLLIES</span></h2>
+        <p class="description">
+            A Nollies 3D não é apenas uma loja de impressão. Somos um estúdio de criação focado em trazer o estilo das ruas para o mundo 3D. Especialistas em FDM e Resina, transformamos seu projeto ou modelo favorito do Thingiverse em uma peça única.
+        </p>
     </section>
 
     <section id="modelos">
-        <h2 class="section-title">Modelos <span>Prontos</span> para Você!</h2>
+        <h2 class="title">MODELOS <span>PRONTOS</span></h2>
         <div class="grid">
             <div class="card">
-                <img src="https://cdn.thingiverse.com/renders/e9/89/3f/82/53/339a06692224734563a3d548b871ed3d_display_large.jpg" alt="Vaso Espiral">
-                <div class="card-body">
-                    <h3>Vaso Espiral Estiloso</h3>
-                    <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 15px;">Decoração moderna com toque artístico. Impressão FDM.</p>
-                    <button class="btn-card" onclick="preencherForm('Vaso Espiral', 'https://www.thingiverse.com/thing:186720')">Pedir Orçamento</button>
+                <img src="https://cdn.thingiverse.com/renders/e9/89/3f/82/53/339a06692224734563a3d548b871ed3d_display_large.jpg" alt="Vaso">
+                <div class="card-content">
+                    <h3>VASO ESPIRAL</h3>
+                    <button class="btn-order" onclick="setModelo('Vaso Espiral', 'https://www.thingiverse.com/thing:186720')">Pedir Orçamento</button>
                 </div>
             </div>
             <div class="card">
-                <img src="https://cdn.thingiverse.com/renders/bc/f1/d0/20/30/434676109968a306471e43343c9429c3_display_large.jpg" alt="Dragão Articulado">
-                <div class="card-body">
-                    <h3>Dragão Articulado Top</h3>
-                    <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 15px;">Um dos mais populares! Ótimo para testes e diversão.</p>
-                    <button class="btn-card" onclick="preencherForm('Dragão Articulado', 'https://www.thingiverse.com/thing:5153330')">Pedir Orçamento</button>
+                <img src="https://cdn.thingiverse.com/renders/bc/f1/d0/20/30/434676109968a306471e43343c9429c3_display_large.jpg" alt="Dragão">
+                <div class="card-content">
+                    <h3>DRAGÃO ARTICULADO</h3>
+                    <button class="btn-order" onclick="setModelo('Dragão Articulado', 'https://www.thingiverse.com/thing:5153330')">Pedir Orçamento</button>
                 </div>
             </div>
             <div class="card">
-                <img src="https://cdn.thingiverse.com/renders/7c/4f/2e/7d/5a/04b8b693e54f762f026b2f4f24f0c6e2_display_large.jpg" alt="Suporte de Celular">
-                <div class="card-body">
-                    <h3>Suporte de Celular Urbano</h3>
-                    <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 15px;">Prático e funcional, para seu setup ou mesa.</p>
-                    <button class="btn-card" onclick="preencherForm('Suporte de Celular', 'https://www.thingiverse.com/thing:2194278')">Pedir Orçamento</button>
-                </div>
-            </div>
-             <div class="card">
-                <img src="https://cdn.thingiverse.com/renders/72/ec/64/7b/3c/69f52f4470c679a78ae325997d62751f_display_large.jpg" alt="Vaso Geometrico">
-                <div class="card-body">
-                    <h3>Vaso Geométrico Minimalista</h3>
-                    <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 15px;">Design clean para qualquer ambiente moderno.</p>
-                    <button class="btn-card" onclick="preencherForm('Vaso Geometrico', 'https://www.thingiverse.com/thing:3033166')">Pedir Orçamento</button>
+                <img src="https://cdn.thingiverse.com/renders/7c/4f/2e/7d/5a/04b8b693e54f762f026b2f4f24f0c6e2_display_large.jpg" alt="Suporte">
+                <div class="card-content">
+                    <h3>SUPORTE CELULAR</h3>
+                    <button class="btn-order" onclick="setModelo('Suporte Celular', 'https://www.thingiverse.com/thing:2194278')">Pedir Orçamento</button>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="ideia">
-        <h2 class="section-title">Mande sua <span>Ideia</span> pra Nollies!</h2>
-        <div class="form-box">
+        <h2 class="title">MANDE SUA <span>IDEIA</span></h2>
+        <div class="form-container">
             <div class="input-group">
-                <label for="origem">Origem do seu Projeto:</label>
-                <select id="origem">
-                    <option value="Thingiverse">Tenho um link (Thingiverse, Cults3D, etc.)</option>
-                    <option value="ArquivoProprio">Tenho meu próprio arquivo 3D (.STL, .OBJ)</option>
-                    <option value="IdeiaDescricao">Tenho uma ideia / Preciso de projeto (descrição)</option>
+                <label>O que você precisa?</label>
+                <select id="tipo">
+                    <option value="Thingiverse">Tenho Link do Thingiverse</option>
+                    <option value="Arquivo">Tenho Arquivo STL/OBJ</option>
+                    <option value="Ideia">Tenho apenas uma ideia</option>
                 </select>
             </div>
             <div class="input-group">
-                <label for="detalhes">Link ou Descrição Detalhada:</label>
-                <textarea id="detalhes" rows="5" placeholder="Cole o link do modelo, descreva sua ideia, cor, tamanho, etc. Quanto mais detalhes, melhor!"></textarea>
+                <label>Detalhes (Link ou Descrição)</label>
+                <textarea id="info" rows="5" placeholder="Cole o link aqui ou descreva o tamanho e a cor que deseja..."></textarea>
             </div>
-            <button class="btn-whats" onclick="enviarWhats()">
-                <i class="fab fa-whatsapp"></i> Solicitar Orçamento via WhatsApp
+            <button class="btn-whatsapp" onclick="enviar()">
+                <i class="fab fa-whatsapp"></i> Enviar para Orçamento no Whats
             </button>
         </div>
     </section>
 
     <footer>
-        <div class="logo">NOLLIES 3D</div>
-        <p>Conecte-se com a Nollies:</p>
-        <div class="social-links">
-            <a href="https://instagram.com/seuperfil" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://facebook.com/seuperfil" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://tiktok.com/@seuperfil" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <div class="logo-text">NOLLIES 3D</div>
+        <div class="socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
-        <a href="https://shopee.com.br/SEU_LINK_SHOPEE" target="_blank" class="shopee-btn">
-            <i class="fas fa-shopping-bag"></i> Visite nossa Loja na Shopee
-        </a>
-        <p style="margin-top: 40px; font-size: 0.8rem; color: #888;">&copy; 2026 Nollies 3D. Todos os direitos reservados. Impressão 3D com estilo e precisão.</p>
+        <a href="https://shopee.com.br" class="shopee-link">NOSSA LOJA NA SHOPEE</a>
+        <p class="copy">&copy; 2026 NOLLIES 3D - TODOS OS DIREITOS RESERVADOS.</p>
     </footer>
 
-    <script>
-        const WHATSAPP_NUMBER = "5511999999999"; // <--- SUBSTITUA PELO SEU NÚMERO DE WHATSAPP (com DDD)
-
-        // Função para preencher o formulário ao clicar em um modelo da vitrine
-        function preencherForm(nomeModelo, linkModelo) {
-            document.getElementById('origem').value = 'Thingiverse'; // Define a origem como Thingiverse
-            document.getElementById('detalhes').value = `Olá! Gostaria de um orçamento para o modelo: *${nomeModelo}*\nLink: ${linkModelo}\n\n`; // Preenche a descrição
-            
-            // Rola suavemente até a seção do formulário
-            document.getElementById('ideia').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Função para enviar o orçamento via WhatsApp
-        function enviarWhats() {
-            const origem = document.getElementById('origem').value;
-            const detalhes = document.getElementById('detalhes').value;
-            
-            let mensagemWhats = `*NOVO PEDIDO DE ORÇAMENTO NOLLIES 3D*\n\n`;
-            mensagemWhats += `*Origem do Projeto:* ${origem}\n`;
-            mensagemWhats += `*Detalhes da Ideia/Link:* ${detalhes}\n\n`;
-            mensagemWhats += `Aguardamos seu contato para transformar sua ideia em realidade!`;
-
-            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagemWhats)}`;
-            window.open(url, '_blank');
-        }
-
-        // Funções para scroll suave dos links do menu
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
