@@ -1,51 +1,33 @@
-// Função para mostrar/esconder campo de link
-function toggleInputs() {
-    const origem = document.getElementById('origem').value;
-    const groupLink = document.getElementById('group-link');
+// Substitua pelo seu número real do WhatsApp (DDI + DDD + Número)
+const MEU_WHATSAPP = "5511999999999"; 
+
+// Função que preenche o formulário quando o cliente clica num modelo pronto
+function setModelo(nome, link) {
+    const textarea = document.getElementById('info');
+    const select = document.getElementById('tipo');
     
-    if (origem === 'thingiverse') {
-        groupLink.style.display = 'block';
-    } else {
-        groupLink.style.display = 'none';
-        document.getElementById('linkModel').value = '';
-    }
+    select.value = "Thingiverse";
+    textarea.value = `Gostaria de um orçamento para o modelo:\n👉 ${nome}\nLink: ${link}`;
+    
+    // Rola para a seção da ideia
+    document.getElementById('ideia').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Função que preenche o form ao clicar num modelo da vitrine
-function selecionarModelo(nome, link) {
-    document.getElementById('origem').value = 'thingiverse';
-    toggleInputs();
-    
-    document.getElementById('linkModel').value = link;
-    document.getElementById('obs').value = `Olá! Gostaria de um orçamento para o modelo: ${nome}`;
-    
-    // Rola suavemente até o formulário
-    document.getElementById('orcamento').scrollIntoView({ behavior: 'smooth' });
-}
+// Função que formata e envia a mensagem para o WhatsApp
+function enviar() {
+    const tipo = document.getElementById('tipo').value;
+    const info = document.getElementById('info').value;
 
-// Função para disparar o WhatsApp
-function enviarWhatsApp() {
-    const meuNumero = "5511999999999"; // <--- COLOQUE SEU NÚMERO AQUI
-    
-    const origem = document.getElementById('origem').value;
-    const link = document.getElementById('linkModel').value;
-    const material = document.getElementById('material').value;
-    const obs = document.getElementById('obs').value;
-
-    let mensagem = `*SOLICITAÇÃO DE ORÇAMENTO 3D*\n\n`;
-    mensagem += `*Origem:* ${origem === 'thingiverse' ? 'Link Externo' : 'Arquivo Próprio'}\n`;
-    
-    if (link) {
-        mensagem += `*Link do Projeto:* ${link}\n`;
-    }
-    
-    mensagem += `*Material:* ${material}\n`;
-    
-    if (obs) {
-        mensagem += `*Observações:* ${obs}\n`;
+    if (!info.trim()) {
+        alert("Por favor, preencha os detalhes da sua ideia ou link!");
+        return;
     }
 
-    const url = `https://wa.me/${meuNumero}?text=${encodeURIComponent(mensagem)}`;
+    const mensagem = `*NOVO PEDIDO NOLLIES 3D*\n\n` +
+                     `*Tipo:* ${tipo}\n` +
+                     `*Detalhes:* ${info}`;
+
+    const url = `https://wa.me/${MEU_WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
     
     window.open(url, '_blank');
 }
