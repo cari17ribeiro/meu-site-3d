@@ -11,33 +11,40 @@
 <body>
 
     <header>
-        <div class="logo-text">NOLLIES 3D</div>
+        <div class="logo-area">
+            <img src="https://i.ibb.co/DDs1QKNx/5569122f-ebf4-45fb-b471-f4e24dcad60a.png" alt="Nollies 3D">
+        </div>
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#modelos">Modelos</a></li>
-                <li><a href="#ideia">Sua Ideia</a></li>
+                <li><a href="#ideia">Mande sua Ideia</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="inicio" class="hero">
-        <h1>TRANSFORMAMOS PIXELS EM <span>OBJETOS REAIS</span></h1>
-        <p>A cultura urbana encontra a fabricação digital. Impressões de alta qualidade com a pegada da Nollies 3D.</p>
-        <a href="#modelos" class="btn-cta">Explorar Catálogo</a>
+        <div class="hero-content">
+            <img src="https://i.ibb.co/DDs1QKNx/5569122f-ebf4-45fb-b471-f4e24dcad60a.png" class="hero-logo" alt="Logo Nollies">
+            <h1>TRANSFORMAMOS PIXELS EM <span>OBJETOS REAIS</span></h1>
+            <p>Cultura urbana e fabricação digital de alta precisão.</p>
+            <a href="#modelos" class="btn-cta">Ver Modelos Exclusivos</a>
+        </div>
     </section>
 
-    <section id="sobre">
-        <h2 class="title">SOBRE A <span>NOLLIES</span></h2>
-        <p class="description">
-            A Nollies 3D não é apenas uma loja de impressão. Somos um estúdio de criação focado em trazer o estilo das ruas para o mundo 3D. Especialistas em FDM e Resina, transformamos seu projeto ou modelo favorito do Thingiverse em uma peça única.
-        </p>
-    </section>
-
-    <section id="modelos">
+    <section id="modelos" class="modelos-section">
         <h2 class="title">MODELOS <span>PRONTOS</span></h2>
-        <div class="grid">
+        
+        <div class="carousel-container">
+            <div class="card card-destaque">
+                <img src="https://images.unsplash.com/photo-1631243265141-8608e678e079?q=80&w=1000" alt="Impressora 3D">
+                <div class="card-content">
+                    <h3>ESTAÇÃO DE IMPRESSÃO</h3>
+                    <button class="btn-order" onclick="setModelo('Impressão Personalizada', 'Personalizado')">Orçar Agora</button>
+                </div>
+            </div>
+
             <div class="card">
                 <img src="https://cdn.thingiverse.com/renders/e9/89/3f/82/53/339a06692224734563a3d548b871ed3d_display_large.jpg" alt="Vaso">
                 <div class="card-content">
@@ -45,6 +52,7 @@
                     <button class="btn-order" onclick="setModelo('Vaso Espiral', 'https://www.thingiverse.com/thing:186720')">Pedir Orçamento</button>
                 </div>
             </div>
+
             <div class="card">
                 <img src="https://cdn.thingiverse.com/renders/bc/f1/d0/20/30/434676109968a306471e43343c9429c3_display_large.jpg" alt="Dragão">
                 <div class="card-content">
@@ -52,6 +60,7 @@
                     <button class="btn-order" onclick="setModelo('Dragão Articulado', 'https://www.thingiverse.com/thing:5153330')">Pedir Orçamento</button>
                 </div>
             </div>
+
             <div class="card">
                 <img src="https://cdn.thingiverse.com/renders/7c/4f/2e/7d/5a/04b8b693e54f762f026b2f4f24f0c6e2_display_large.jpg" alt="Suporte">
                 <div class="card-content">
@@ -66,32 +75,29 @@
         <h2 class="title">MANDE SUA <span>IDEIA</span></h2>
         <div class="form-container">
             <div class="input-group">
-                <label>O que você precisa?</label>
+                <label>Origem do Projeto</label>
                 <select id="tipo">
-                    <option value="Thingiverse">Tenho Link do Thingiverse</option>
-                    <option value="Arquivo">Tenho Arquivo STL/OBJ</option>
-                    <option value="Ideia">Tenho apenas uma ideia</option>
+                    <option value="Thingiverse">Link do Thingiverse / Cults3D</option>
+                    <option value="Arquivo">Tenho Arquivo próprio</option>
+                    <option value="Ideia">Apenas uma ideia</option>
                 </select>
             </div>
             <div class="input-group">
                 <label>Detalhes (Link ou Descrição)</label>
-                <textarea id="info" rows="5" placeholder="Cole o link aqui ou descreva o tamanho e a cor que deseja..."></textarea>
+                <textarea id="info" rows="5" placeholder="Cole o link ou descreva sua ideia..."></textarea>
             </div>
             <button class="btn-whatsapp" onclick="enviar()">
-                <i class="fab fa-whatsapp"></i> Enviar para Orçamento no Whats
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento via WhatsApp
             </button>
         </div>
-    </section>
-
-    <footer>
-        <div class="logo-text">NOLLIES 3D</div>
-        <div class="socials">
+        
+        <div class="social-links">
             <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="https://shopee.com.br" target="_blank" class="btn-shopee">Loja na Shopee</a>
         </div>
-        <a href="https://shopee.com.br" class="shopee-link">NOSSA LOJA NA SHOPEE</a>
-        <p class="copy">&copy; 2026 NOLLIES 3D - TODOS OS DIREITOS RESERVADOS.</p>
-    </footer>
+    </section>
 
     <script src="script.js"></script>
 </body>
