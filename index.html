@@ -84,6 +84,34 @@
         .section-title { font-size: 3rem; text-align: center; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; }
         .section-title span { color: var(--orange); }
 
+        /* NOVOS ESTILOS PARA AS INFORMAÇÕES ADICIONADAS */
+        .info-box {
+            background: rgba(255, 77, 0, 0.1);
+            border-left: 4px solid var(--orange);
+            padding: 20px;
+            margin: 0 auto 30px auto;
+            max-width: 800px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .info-box p { font-size: 1.1rem; line-height: 1.5; color: #eee; }
+        
+        .ai-tool-box {
+            background: #1a1a1a;
+            border: 1px dashed var(--blue);
+            padding: 25px;
+            margin: 0 auto 40px auto;
+            max-width: 800px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .ai-tool-box i { color: var(--blue); font-size: 2.5rem; }
+        .ai-tool-box a { color: var(--blue); text-decoration: underline; font-weight: bold; }
+
         .category-filter { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
         .btn-filter { background: transparent; color: white; border: 1px solid var(--orange); padding: 8px 20px; cursor: pointer; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
         .btn-filter.active, .btn-filter:hover { background: var(--orange); }
@@ -112,7 +140,6 @@
         .box-form label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--blue); text-transform: uppercase; font-size: 0.8rem; }
         .box-form input, .box-form select, .box-form textarea { width: 100%; padding: 12px; margin-top: 5px; background: #222; border: 1px solid #444; color: white; margin-bottom: 20px; font-family: 'Oswald', sans-serif; }
         
-        /* Esconder campos dinâmicos por padrão */
         .dynamic-field { display: none; }
         
         .btn-whats { background: #25D366; color: white; width: 100%; padding: 15px; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; border-radius: 5px; font-family: 'Oswald', sans-serif; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
@@ -132,6 +159,7 @@
             .hero-right { margin-top: 30px; }
             nav ul { display: none; }
             .hero-left h1 { font-size: 2.5rem; }
+            .ai-tool-box { text-align: center; }
         }
     </style>
 </head>
@@ -161,9 +189,7 @@
             </div>
             <div class="hero-right">
                 <h2>Sobre a Nollie 3D</h2>
-                <p>A Nollies 3D nasce da parceria de dois irmãos que tiraram ideias do papel.
-Unimos a cultura das ruas à tecnologia de ponta para criar modelagem 3D e impressão em filamento com precisão e estilo.
-Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele modelo que você sempre quis, transformamos pixels em objetos reais.</p>
+                <p>A Nollies 3D nasce da parceria de dois irmãos que tiraram ideias do papel.<br>Unimos a cultura das ruas à tecnologia de ponta para criar modelagem 3D e impressão em filamento com precisão e estilo.<br>Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele modelo que você sempre quis, transformamos pixels em objetos reais.</p>
             </div>
         </div>
     </section>
@@ -171,6 +197,19 @@ Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele model
     <section id="modelos" class="section-modelos">
         <h2 class="section-title">Modelos <span>Prontos</span></h2>
         
+        <div class="info-box">
+            <p>Você pode acessar essa plataforma que possui diversos modelos prontos, escolher um e nos enviar o link que <strong>imprimimos para você!</strong></p>
+        </div>
+
+        <div class="ai-tool-box">
+            <i class="fas fa-robot"></i>
+            <div style="max-width: 500px; text-align: left;">
+                <h4 style="color: var(--blue); text-transform: uppercase; margin-bottom: 5px;">Crie seu próprio modelo 3D com IA</h4>
+                <p style="font-size: 0.9rem; color: #ccc;">Sabia que você pode transformar uma foto em 3D? Use a ferramenta gratuita <a href="https://www.imgto3d.ai/pt" target="_blank">ImgTo3D.ai</a> para gerar seu arquivo e mande pra gente!</p>
+            </div>
+            <a href="https://www.imgto3d.ai/pt" target="_blank" class="btn-filter" style="border-color: var(--blue); color: var(--blue);">Acessar IA</a>
+        </div>
+
         <div class="category-filter">
             <button class="btn-filter active" onclick="filterCategory('todos')">Todos</button>
             <button class="btn-filter" onclick="filterCategory('utilidades')">Utilidades</button>
@@ -180,7 +219,6 @@ Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele model
         </div>
 
         <div class="carousel" id="model-carousel">
-            
             <div class="card" data-category="decoracao">
                 <img src="https://cdn.thingiverse.com/assets/50/33/71/6b/1d/large_display_Bild_1.png" alt="Vaso">
                 <div class="card-body">
@@ -272,7 +310,6 @@ Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele model
                     <button class="btn-cta" style="width: 100%;" onclick="escolher('Marcador de Página Gato Preto', 'https://www.thingiverse.com/thing:7269365')">Orçar Agora</button>
                 </div>
             </div>
-
             <div class="card" data-category="utilidades">
                 <img src="https://cdn.thingiverse.com/renders/20/7f/46/01/45/799bad5a3b514f096e69bbc4a7896cd9_display_large.jpg" alt="Coletor Pó">
                 <div class="card-body">
@@ -358,7 +395,7 @@ Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele model
                 </div>
             </div>
             <div class="card" data-category="decoracao">
-                <img src="https://cdn.thingiverse.com/assets/8b/f4/7c/b1/d6/large_display_a667f6c9-3232-488e-9b7d-8e25ffa89bf0.png" alt="Nome 3D">
+                <img src="https://i.ibb.co/mrFGW2ct/e7badcf6-fb80-427e-9cba-3a3c774e43d0.png" alt="Nome 3D">
                 <div class="card-body">
                     <h3>NOME 3D</h3>
                     <button class="btn-cta" style="width: 100%;" onclick="escolher('Nome 3D', 'https://www.thingiverse.com/thing:5781517')">Orçar Agora</button>
@@ -420,7 +457,6 @@ Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele model
                     <button class="btn-cta" style="width: 100%;" onclick="escolher('Jogo da Velha de Bolso', 'https://www.thingiverse.com/thing:6875114')">Orçar Agora</button>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -478,7 +514,7 @@ Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele model
             const buttons = document.querySelectorAll('.btn-filter');
             
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if(event) event.target.classList.add('active');
 
             cards.forEach(card => {
                 if(cat === 'todos' || card.getAttribute('data-category') === cat) {
@@ -508,14 +544,13 @@ Aqui a gente não só imprime — a gente cria. Do projeto do zero àquele model
         function enviar() {
             const fone = "5513997372464";
             const tipo = document.getElementById('tipo').value;
-            let detalhes = "";
+            let msg = "Olá Nollie 3D! Gostaria de um orçamento:\n\n";
 
-            if(tipo === 'link') detalhes = "Link do Modelo: " + document.getElementById('input-link').value;
-            if(tipo === 'arquivo') detalhes = "Informações do Arquivo: " + document.getElementById('input-arquivo').value;
-            if(tipo === 'ideia') detalhes = "Descrição da Ideia: " + document.getElementById('input-ideia').value;
+            if(tipo === 'link') msg += "Link do modelo: " + document.getElementById('input-link').value;
+            if(tipo === 'arquivo') msg += "Tenho um arquivo pronto: " + document.getElementById('input-arquivo').value;
+            if(tipo === 'ideia') msg += "Minha ideia: " + document.getElementById('input-ideia').value;
 
-            const textoFinal = `*SOLICITAÇÃO DE ORÇAMENTO - NOLLIE 3D*\n\n*Tipo:* ${tipo.toUpperCase()}\n*Detalhes:* ${detalhes}`;
-            window.open(`https://wa.me/${fone}?text=${encodeURIComponent(textoFinal)}`, '_blank');
+            window.open(`https://wa.me/${fone}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
 </body>
