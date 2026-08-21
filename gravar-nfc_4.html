@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <title>Nollie3D — Gravar NFC</title>
+        <link
+            rel="icon"
+            href="data:image/png;base64,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"
+        />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fredoka:wght@500;600;700&family=Nunito:wght@0,400;0,600;0,700;0,800;1,600&display=swap');
+
+            :root {
+                --bg-page: #F6E6C8;
+                --bg-card: #FFFDF7;
+                --bg-card-alt: #FBF3DE;
+                --text-dark: #2E2013;
+                --text-muted: #8A7256;
+                --text-faint: #B3A483;
+                --border-soft: #E7D6AC;
+                --border-soft-2: #EEDFBC;
+                --accent-orange: #ED8A2B;
+                --accent-orange-dark: #D9711A;
+                --accent-teal: #2FA6A0;
+                --accent-teal-dark: #22827D;
+                --accent-teal-soft: #DCF0EE;
+                --accent-pink: #E8628F;
+                --accent-pink-soft: #FBE3EC;
+                --accent-red: #D9534F;
+                --accent-green-dark: #2E7D32;
+                --shadow-card: 0 10px 28px rgba(46,32,19,0.12), 0 2px 6px rgba(46,32,19,0.05);
+                --radius-lg: 20px;
+                --radius-md: 14px;
+                --radius-sm: 9px;
+                --nav-h: 78px;
+            }
+
+            * { box-sizing: border-box; }
+            html { -webkit-text-size-adjust: 100%; }
+            html, body { min-height: 100%; }
+            body {
+                margin: 0;
+                background-color: var(--bg-page);
+                color: var(--text-dark);
+                font-family: 'Nunito', system-ui, sans-serif;
+            }
+            h1, .panel-title, .card-heading, .nav-item {
+                font-family: 'Baloo 2', 'Nunito', sans-serif;
+            }
+
+            /* ===================== Cabeçalho compartilhado ===================== */
+            .nollie-header{
+                position: sticky; top: 0; z-index: 30;
+                display:flex; align-items:center;
+                height:78px;
+                padding:0 5.5%;
+                background:rgba(251,244,227,.96);
+                border-bottom:2px solid #e7d6ac;
+                box-shadow:0 4px 18px rgba(36,26,15,.08);
+                font-family:'Nunito',sans-serif;
+            }
+            .nollie-header .logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:#241a12;min-width:210px;}
+            .nollie-header .logo img{width:48px;height:48px;object-fit:contain;display:block;}
+            .nollie-header .logo-text{font-family:'Fredoka','Nunito',sans-serif;font-weight:700;font-size:1.25rem;line-height:.9;letter-spacing:-.5px;display:flex;flex-direction:column;}
+            .nollie-header .logo-text span{color:#e8622c;}
+            .nollie-header .logo-text small{font-family:'Nunito',sans-serif;font-size:.43rem;letter-spacing:2.2px;color:#1f6f68;margin-top:5px;}
+            .nollie-nav{display:flex;align-items:center;gap:6px;position:absolute;left:50%;transform:translateX(-50%);}
+            .nollie-nav a{color:#241a12;text-decoration:none;font-family:'Nunito',sans-serif;font-weight:700;font-size:.92rem;padding:28px 14px 20px;position:relative;white-space:nowrap;}
+            .nollie-nav a:hover,.nollie-nav a.active{color:#c34c1d;}
+            .nollie-nav a.active::after{content:"";position:absolute;left:14px;right:14px;bottom:13px;height:5px;background:#e3a73b;border-radius:4px;}
+            .nollie-nav .nav-divider{width:1px;height:24px;background:#d7c49e;margin:0 5px;}
+            .nollie-nav .generator-tab{appearance:none;border:0;background:transparent;color:#241a12;font-family:'Nunito',sans-serif;font-weight:700;font-size:.84rem;padding:28px 10px 20px;position:relative;white-space:nowrap;cursor:pointer;text-decoration:none;display:inline-block;}
+            .nollie-nav .generator-tab:hover{color:#c34c1d;}
+            .nollie-nav .nfc-tab-link{color:#22827D;text-decoration:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:.88rem;padding:28px 14px 20px;position:relative;white-space:nowrap;}
+            .nollie-nav .nfc-tab-link:hover{color:#166b66;}
+            .nollie-nav .nfc-tab-link.active::after{content:"";position:absolute;left:14px;right:14px;bottom:13px;height:5px;background:#2FA6A0;border-radius:4px;}
+            .nollie-header-icons { display:none; align-items:center; gap:8px; margin-left:auto; }
+            .mobile-menu-btn{
+                width:40px;height:40px;border-radius:10px;border:2px solid #241a12;
+                background:#fffdf7;color:#241a12;font-size:16px;cursor:pointer;flex-shrink:0;
+            }
+            @media(max-width:800px){
+                .nollie-header{padding:0 4%;}
+                .nollie-header .logo{min-width:auto;}
+                .nollie-header .logo-text{display:none;}
+                .nollie-header-icons{display:flex;}
+                .nollie-nav{
+                    display:none;
+                    position:fixed;
+                    top:var(--nav-h);
+                    left:0; right:0;
+                    margin:0;
+                    transform:none;
+                    flex-direction:column;
+                    align-items:stretch;
+                    gap:0;
+                    background:var(--bg-card);
+                    border-bottom:1px solid var(--border-soft);
+                    box-shadow:0 10px 24px rgba(46,32,19,.15);
+                    z-index:40;
+                    max-height:calc(100vh - var(--nav-h));
+                    overflow-y:auto;
+                    padding:6px 0;
+                }
+                .nollie-nav.mobile-open{ display:flex; }
+                .nollie-nav a,.nollie-nav .generator-tab{
+                    font-size:15px;
+                    padding:14px 20px;
+                    width:100%;
+                    text-align:left;
+                    background:none;
+                }
+                .nollie-nav .nav-divider{ display:none; }
+                .nollie-nav a.active::after{ content:none; }
+                .nollie-nav .nfc-tab-link.active{
+                    background:var(--accent-teal-soft);
+                    color:var(--accent-teal-dark);
+                }
+            }
+
+            /* ===================== Conteúdo da página ===================== */
+            .nfc-page-wrap{
+                max-width: 920px;
+                margin: 0 auto;
+                padding: 34px 20px 70px;
+            }
+            .nfc-page-title{
+                font-size: 22px;
+                font-weight: 800;
+                color: var(--text-dark);
+                margin: 0 0 4px;
+                display:flex; align-items:center; gap:10px;
+            }
+            .nfc-page-sub{
+                font-size: 13.5px;
+                color: var(--text-muted);
+                margin: 0 0 22px;
+                font-weight: 600;
+                line-height:1.5;
+            }
+
+            /* ---- Hero ---- */
+            .nfc-hero{ max-width: 640px; }
+            .nfc-hero-badge{
+                display:inline-flex; align-items:center; gap:6px;
+                background: var(--accent-teal-soft); color: var(--accent-teal-dark);
+                font-size:11.5px; font-weight:800; letter-spacing:.3px;
+                padding:6px 12px; border-radius:999px; margin-bottom:12px;
+            }
+            .nfc-hero h1{
+                font-size: 27px; line-height:1.18; font-weight:800;
+                color: var(--text-dark); margin: 0 0 10px;
+            }
+            .nfc-hero h1 span{ color: var(--accent-teal-dark); }
+            .nfc-hero-sub{
+                font-size:14px; color:var(--text-muted); font-weight:600;
+                line-height:1.6; margin:0 0 20px;
+            }
+            .nfc-hero-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:6px; }
+            .btn-primary-cta, .btn-ghost-cta{
+                font-family:'Baloo 2',sans-serif; font-weight:700; font-size:13.5px;
+                padding:12px 20px; border-radius:999px; text-decoration:none;
+                display:inline-flex; align-items:center; gap:6px; white-space:nowrap;
+            }
+            .btn-primary-cta{
+                background: linear-gradient(180deg, var(--accent-orange), var(--accent-orange-dark));
+                color:#fff; box-shadow:0 6px 16px rgba(217,113,26,.32);
+            }
+            .btn-primary-cta:hover{ transform:translateY(-1px); }
+            .btn-ghost-cta{
+                background: var(--bg-card); color: var(--text-dark);
+                border:1.5px solid var(--border-soft);
+            }
+            .btn-ghost-cta:hover{ border-color: var(--accent-teal); color:var(--accent-teal-dark); }
+
+            /* ---- Grid de funções ---- */
+            .fn-section{ margin-top:38px; }
+            .fn-section-title{
+                font-family:'Baloo 2',sans-serif; font-weight:800; font-size:19px;
+                color:var(--text-dark); margin:0 0 4px;
+            }
+            .fn-section-sub{
+                font-size:13px; color:var(--text-muted); font-weight:600;
+                margin:0 0 18px; line-height:1.5;
+            }
+            .function-grid{
+                display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+                gap:14px;
+            }
+            .function-card{
+                background: var(--bg-card); border:1.5px solid var(--border-soft);
+                border-radius: var(--radius-md); padding:16px 16px 15px;
+                box-shadow: 0 5px 14px rgba(46,32,19,.06);
+                cursor:pointer; text-align:left; font-family:'Nunito',sans-serif;
+                transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+                display:flex; flex-direction:column;
+            }
+            .function-card:hover, .function-card:focus-visible{
+                transform:translateY(-3px);
+                box-shadow: 0 12px 24px rgba(46,32,19,.14);
+                border-color: var(--accent-teal);
+                outline:none;
+            }
+            .function-card .fc-icon{ font-size:25px; margin-bottom:9px; line-height:1; }
+            .function-card .fc-title{
+                font-family:'Baloo 2',sans-serif; font-weight:700; font-size:14.5px;
+                color:var(--text-dark); margin-bottom:5px;
+            }
+            .function-card .fc-desc{
+                font-size:12px; color:var(--text-muted); font-weight:600;
+                line-height:1.45; flex-grow:1;
+            }
+            .function-card .fc-example{
+                font-size:10.5px; color:var(--accent-teal-dark); font-weight:800;
+                margin-top:10px; text-transform:uppercase; letter-spacing:.3px;
+            }
+
+            /* ---- Passo a passo ---- */
+            .steps-section{ margin-top:42px; }
+            .steps-list{ display:flex; flex-direction:column; gap:12px; margin-top:18px; }
+            .step-item{
+                display:flex; gap:14px; align-items:flex-start;
+                background: var(--bg-card); border:1px solid var(--border-soft);
+                border-radius: var(--radius-md); padding:14px 16px;
+                box-shadow: 0 4px 12px rgba(46,32,19,.05);
+            }
+            .step-num{
+                flex-shrink:0; width:34px; height:34px; border-radius:50%;
+                background: linear-gradient(180deg, var(--accent-teal), var(--accent-teal-dark));
+                color:#fff; font-family:'Baloo 2',sans-serif; font-weight:800; font-size:14.5px;
+                display:grid; place-items:center;
+            }
+            .step-body h3{
+                margin:2px 0 3px; font-family:'Baloo 2',sans-serif; font-weight:700;
+                font-size:14.5px; color:var(--text-dark);
+            }
+            .step-body p{
+                margin:0; font-size:12.5px; color:var(--text-muted);
+                font-weight:600; line-height:1.55;
+            }
+
+            /* ---- Banner CTA (comprar) ---- */
+            .cta-banner{
+                margin-top:36px;
+                background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
+                border-radius: var(--radius-lg);
+                padding:22px 24px;
+                color:#fff;
+                display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+                gap:16px;
+                box-shadow: 0 12px 28px rgba(217,113,26,.28);
+            }
+            .cta-banner-text h3{ margin:0 0 4px; font-family:'Baloo 2',sans-serif; font-size:17.5px; }
+            .cta-banner-text p{ margin:0; font-size:12.5px; font-weight:600; opacity:.95; max-width:420px; line-height:1.5; }
+            .btn-cta-white{
+                background:#fff; color: var(--accent-orange-dark);
+                font-family:'Baloo 2',sans-serif; font-weight:800;
+                padding:12px 22px; border-radius:999px; text-decoration:none;
+                font-size:13.5px; white-space:nowrap; flex-shrink:0;
+            }
+            .btn-cta-white:hover{ transform:translateY(-1px); }
+
+            /* ---- Recorder ---- */
+            .recorder-section{ margin-top:44px; }
+            .recorder-eyebrow{
+                display:flex; align-items:center; gap:8px; margin-bottom:10px;
+            }
+            .recorder-eyebrow .step-num{ width:28px; height:28px; font-size:13px; }
+            .recorder-eyebrow span{
+                font-family:'Baloo 2',sans-serif; font-weight:800; font-size:15px; color:var(--text-dark);
+            }
+            .recorder-wrap{ max-width:560px; }
+            #gravar{ scroll-margin-top: 96px; }
+
+            /* ---- Aviso "siga antes de gravar" ---- */
+            .follow-overlay{
+                display:none;
+                position:fixed; inset:0; z-index:100;
+                background: rgba(46,32,19,.55);
+                align-items:center; justify-content:center;
+                padding: 20px;
+            }
+            .follow-overlay.open{ display:flex; }
+            .follow-modal{
+                background: var(--bg-card);
+                border-radius: var(--radius-lg);
+                box-shadow: 0 20px 50px rgba(0,0,0,.35);
+                max-width: 380px;
+                width:100%;
+                padding: 26px 22px 22px;
+                text-align:center;
+                position:relative;
+            }
+            .follow-modal .fm-icon{ font-size:34px; margin-bottom:10px; display:block; }
+            .follow-modal h2{
+                font-family:'Baloo 2',sans-serif; font-weight:800; font-size:18px;
+                color:var(--text-dark); margin:0 0 10px;
+            }
+            .follow-modal p{
+                font-size:13px; color:var(--text-muted); font-weight:600;
+                line-height:1.6; margin:0 0 20px;
+            }
+            .follow-modal p strong{ color:var(--text-dark); }
+            .follow-modal .btn-primary-cta{ width:100%; justify-content:center; margin-bottom:10px; }
+            .follow-modal .fm-skip{
+                display:inline-block; font-size:12.5px; color:var(--text-muted);
+                font-weight:700; text-decoration:underline; cursor:pointer; background:none; border:none;
+            }
+            .follow-modal .fm-close{
+                position:absolute; top:12px; right:14px;
+                background:none; border:none; font-size:18px; color:var(--text-faint);
+                cursor:pointer; line-height:1;
+            }
+
+            .nfc-card{
+                background: var(--bg-card);
+                border: 1px solid var(--border-soft);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-card);
+                padding: 20px 20px 22px;
+            }
+            .mini-guide{
+                display:flex; gap:8px; align-items:flex-start;
+                background: var(--accent-teal-soft);
+                border: 1px solid #bfe4e1;
+                border-radius: var(--radius-sm);
+                padding: 10px 12px;
+                margin-top: 10px;
+                font-size: 11.5px; line-height: 1.45; color: var(--text-dark); font-weight: 600;
+            }
+            .mini-guide .mini-guide-icon{ font-size:16px; line-height:1.2; flex-shrink:0; }
+            .card-heading{
+                display:flex; align-items:center; gap:8px;
+                font-weight:700; font-size:15.5px; color: var(--accent-teal-dark);
+                margin-bottom:2px;
+            }
+            .panel-sub{ font-size:12.5px; font-weight:600; line-height:1.5; }
+            .field-label{ font-size:12px; color:var(--text-muted); font-weight:700; margin-bottom:4px; display:block; }
+            .nfc-field{ margin-top:14px; }
+            .nfc-input, .nfc-select, .nfc-textarea{
+                width:100%; padding:9px 10px; border-radius:8px;
+                border:1px solid var(--border-soft-2); box-sizing:border-box;
+                font-family:'Nunito',sans-serif; font-size:14px; background:#fff; color:var(--text-dark);
+            }
+            .nfc-textarea{ resize:vertical; }
+            .upload-btn{
+                display:flex; align-items:center; justify-content:center; gap:8px;
+                width:100%;
+                background: linear-gradient(180deg, var(--accent-teal), var(--accent-teal-dark));
+                color:#fff;
+                font-family:'Baloo 2',sans-serif;
+                font-weight:700; font-size:14px;
+                padding:13px; border-radius:var(--radius-sm);
+                cursor:pointer; border:none;
+                box-shadow: 0 5px 14px rgba(34,130,125,.30);
+                transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+                margin-top:16px;
+            }
+            .upload-btn:hover{ transform:translateY(-1px); box-shadow:0 7px 18px rgba(34,130,125,.4); }
+            .upload-btn:disabled{ cursor:not-allowed; }
+            .nfc-cancel-btn{
+                display:none; width:100%; margin-top:8px;
+                background:var(--accent-red); color:#fff; border:none;
+                padding:11px; border-radius:9px; font-family:'Baloo 2',sans-serif;
+                font-weight:700; cursor:pointer; font-size:14px;
+            }
+            .nfc-status{ margin-top:10px; font-size:12.5px; color:var(--text-muted); min-height:18px; font-weight:600; line-height:1.4; }
+            .back-link{
+                display:inline-flex; align-items:center; gap:6px;
+                margin-bottom:16px; color:var(--accent-teal-dark);
+                text-decoration:none; font-weight:700; font-size:13px;
+            }
+            .back-link:hover{ text-decoration:underline; }
+        </style>
+    </head>
+    <body>
+        <script>
+            if (location.protocol === 'http:' || location.protocol === 'https:') {
+                document.querySelectorAll('a.home-anchor-link').forEach(function (link) {
+                    const href = link.getAttribute('href') || '';
+                    if (href.indexOf('index.html#') === 0) {
+                        link.setAttribute('href', href.replace('index.html#', '/#'));
+                    }
+                });
+            }
+        </script>
+
+        <nav class="top-nav nollie-header">
+            <a href="index.html#inicio" class="logo home-anchor-link">
+                <img
+                    src="data:image/png;base64,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"
+                    alt="Nollie 3D"
+                />
+                <span class="logo-text"
+                    >NOLLIE<span>3D</span
+                    ><small>DO DIGITAL PARA O REAL</small></span
+                >
+            </a>
+            <div
+                class="nollie-nav"
+                id="nollieNav"
+                role="navigation"
+                aria-label="Navegação principal"
+            >
+                <a href="index.html#inicio" class="home-anchor-link">Início</a>
+                <a href="index.html#modelos" class="home-anchor-link">Modelos</a>
+                <a href="index.html#ideia" class="home-anchor-link">Sua Ideia</a>
+                <span class="nav-divider" aria-hidden="true"></span>
+                <a href="personalizar.html" class="generator-tab">Chaveiros Chapados</a>
+                <a href="personalizar.html" class="generator-tab">Porta-batons</a>
+                <a href="personalizar.html" class="generator-tab">Quebra-cabeças</a>
+                <span class="nav-divider" aria-hidden="true"></span>
+                <a href="gravar-nfc.html" class="nfc-tab-link active">📲 Gravar NFC</a>
+            </div>
+            <div class="nollie-header-icons">
+                <button
+                    id="mobileMenuBtn"
+                    class="mobile-menu-btn"
+                    type="button"
+                    aria-controls="nollieNav"
+                    aria-expanded="false"
+                    aria-label="Abrir menu"
+                >
+                    ☰
+                </button>
+            </div>
+        </nav>
+
+        <div class="nfc-page-wrap">
+            <a href="personalizar.html" class="back-link">← Voltar para o gerador</a>
+
+            <div class="nfc-hero">
+                <span class="nfc-hero-badge">📲 Chaveiro com NFC</span>
+                <h1>Um toque no celular. <span>Seu link, seu contato, seu Wi-Fi.</span></h1>
+                <p class="nfc-hero-sub">
+                    Todo chaveiro Nollie3D com NFC vem com uma etiqueta de
+                    verdade colada na peça. Você grava nela o que quiser — de
+                    graça, sempre que quiser trocar — e quem encostar o
+                    celular abre na hora, sem instalar nenhum app. Veja tudo
+                    que dá pra fazer e aprenda a gravar em poucos passos.
+                </p>
+                <div class="nfc-hero-actions">
+                    <a href="personalizar.html" class="btn-primary-cta">🧡 Quero meu chaveiro NFC</a>
+                    <a href="#gravar" class="btn-ghost-cta">Já tenho o meu, ir direto pra gravação ↓</a>
+                </div>
+            </div>
+
+            <div class="fn-section">
+                <h2 class="fn-section-title">🧩 O que dá pra gravar na tag</h2>
+                <p class="fn-section-sub">
+                    Toque num card pra ir direto pra ele lá embaixo, com o
+                    formulário certo já selecionado.
+                </p>
+                <div class="function-grid">
+                    <button type="button" class="function-card" data-type="url">
+                        <span class="fc-icon">🔗</span>
+                        <span class="fc-title">Link</span>
+                        <span class="fc-desc">Manda quem encostar direto pro seu site, Instagram, TikTok ou portfólio.</span>
+                        <span class="fc-example">Ideal pra criadores e lojas</span>
+                    </button>
+                    <button type="button" class="function-card" data-type="whatsapp">
+                        <span class="fc-icon">💬</span>
+                        <span class="fc-title">WhatsApp</span>
+                        <span class="fc-desc">Abre uma conversa já com mensagem pronta, sem precisar salvar contato.</span>
+                        <span class="fc-example">Vendedor, prestador de serviço</span>
+                    </button>
+                    <button type="button" class="function-card" data-type="call">
+                        <span class="fc-icon">📞</span>
+                        <span class="fc-title">Ligar</span>
+                        <span class="fc-desc">Disca um número na hora, sem precisar digitar nada.</span>
+                        <span class="fc-example">Contato de emergência</span>
+                    </button>
+                    <button type="button" class="function-card" data-type="sms">
+                        <span class="fc-icon">✉️</span>
+                        <span class="fc-title">SMS</span>
+                        <span class="fc-desc">Abre o app de mensagens com um texto padrão já escrito.</span>
+                        <span class="fc-example">Aviso rápido, check-in</span>
+                    </button>
+                    <button type="button" class="function-card" data-type="email">
+                        <span class="fc-icon">📧</span>
+                        <span class="fc-title">E-mail</span>
+                        <span class="fc-desc">Abre um rascunho de e-mail com destinatário, assunto e mensagem prontos.</span>
+                        <span class="fc-example">Contato profissional</span>
+                    </button>
+                    <button type="button" class="function-card" data-type="location">
+                        <span class="fc-icon">📍</span>
+                        <span class="fc-title">Localização</span>
+                        <span class="fc-desc">Abre o endereço certinho no Google Maps de quem encostar.</span>
+                        <span class="fc-example">Loja física, ponto de encontro</span>
+                    </button>
+                    <button type="button" class="function-card" data-type="pix">
+                        <span class="fc-icon">💸</span>
+                        <span class="fc-title">Chave PIX</span>
+                        <span class="fc-desc">Grava o código copia e cola pra colar direto no app do banco.</span>
+                        <span class="fc-example">Cobrar sem digitar nada</span>
+                    </button>
+                    <button type="button" class="function-card" data-type="wifi">
+                        <span class="fc-icon">📶</span>
+                        <span class="fc-title">Wi-Fi</span>
+                        <span class="fc-desc">Conecta o celular na sua rede automaticamente, sem digitar senha.</span>
+                        <span class="fc-example">Recepção, Airbnb, cafeteria</span>
+                    </button>
+                    <button type="button" class="function-card" data-type="vcard">
+                        <span class="fc-icon">👤</span>
+                        <span class="fc-title">Contato (vCard)</span>
+                        <span class="fc-desc">Salva seu nome, telefone e e-mail direto na agenda da pessoa.</span>
+                        <span class="fc-example">Cartão de visita que não se perde</span>
+                    </button>
+                    <button type="button" class="function-card" data-type="text">
+                        <span class="fc-icon">📝</span>
+                        <span class="fc-title">Texto simples</span>
+                        <span class="fc-desc">Qualquer mensagem fixa que você queira mostrar — um recado, uma frase, um código.</span>
+                        <span class="fc-example">Uso livre</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="steps-section">
+                <h2 class="fn-section-title">🪜 Como gravar, passo a passo</h2>
+                <p class="fn-section-sub">
+                    Não precisa de nenhum app extra — só o navegador Chrome
+                    do celular.
+                </p>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">1</span>
+                        <div class="step-body">
+                            <h3>Peça seu chaveiro com etiqueta NFC</h3>
+                            <p>No <a href="personalizar.html">gerador</a>, ative a opção de NFC ao personalizar sua peça. A etiqueta vem colada, pronta pra gravar.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">2</span>
+                        <div class="step-body">
+                            <h3>Abra esta página no celular, pelo Chrome</h3>
+                            <p>A gravação usa o NFC do próprio aparelho, então precisa ser no navegador Chrome de um Android — funciona em HTTPS, sem instalar nada.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">3</span>
+                        <div class="step-body">
+                            <h3>Escolha o que gravar e preencha os campos</h3>
+                            <p>Toque num dos cards ali em cima ou escolha direto na lista lá embaixo — link, WhatsApp, PIX, Wi-Fi... o que fizer mais sentido pro seu uso.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">4</span>
+                        <div class="step-body">
+                            <h3>Permita o uso do NFC do celular</h3>
+                            <p>Toque em "Permitir uso do NFC" e aceite o pop-up do navegador. Isso só aparece na primeira vez.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">5</span>
+                        <div class="step-body">
+                            <h3>Encoste o celular na etiqueta</h3>
+                            <p>Toque em "Aproximar e gravar tag" e encoste a parte de trás do celular na etiqueta por 1-2 segundos. Pronto — gravado!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-banner">
+                <div class="cta-banner-text">
+                    <h3>Ainda não tem o seu chaveiro NFC?</h3>
+                    <p>Personalize o modelo, ative a etiqueta NFC e receba pronto pra gravar o que quiser.</p>
+                </div>
+                <a href="personalizar.html" class="btn-cta-white">Fazer meu chaveiro →</a>
+            </div>
+
+            <div class="recorder-section recorder-wrap" id="gravar">
+                <div class="recorder-eyebrow">
+                    <span class="step-num">✓</span>
+                    <span>Grave agora</span>
+                </div>
+            <div class="nfc-card">
+                <span class="card-heading">✍️ Gravar etiqueta NFC</span>
+                <div class="mini-guide">
+                    <span class="mini-guide-icon">💡</span>
+                    <span
+                        >Funciona no Chrome para Android com o NFC do
+                        aparelho ligado, em página HTTPS. Depois que a etiqueta
+                        já estiver colada na peça, escolha o tipo de conteúdo,
+                        preencha os campos e encoste o celular nela.</span
+                    >
+                </div>
+
+                <p
+                    class="panel-sub"
+                    id="nfcWriterUnsupportedMsg"
+                    style="display:none; color: var(--accent-red); margin-top:10px;"
+                ></p>
+
+                <div id="nfcWriterBody" style="display:none;">
+                    <div class="nfc-field">
+                        <span class="field-label">O que gravar na tag:</span>
+                        <select id="nfcWriteType" class="nfc-select">
+                            <option value="url">Link (site, Instagram, TikTok...)</option>
+                            <option value="whatsapp">WhatsApp (abre conversa)</option>
+                            <option value="call">Ligar para um número</option>
+                            <option value="sms">SMS (mensagem de texto)</option>
+                            <option value="email">E-mail</option>
+                            <option value="location">Localização (Google Maps)</option>
+                            <option value="pix">Chave PIX (copia e cola)</option>
+                            <option value="wifi">Wi-Fi (conectar automático)</option>
+                            <option value="vcard">Contato (vCard)</option>
+                            <option value="text">Texto simples</option>
+                        </select>
+                    </div>
+
+                    <div id="nfcFieldsUrl" class="nfc-field">
+                        <span class="field-label">URL:</span>
+                        <input
+                            type="text"
+                            id="nfcUrlInput"
+                            class="nfc-input"
+                            placeholder="https://..."
+                        />
+                    </div>
+
+                    <div id="nfcFieldsText" class="nfc-field" style="display:none;">
+                        <span class="field-label">Texto:</span>
+                        <textarea id="nfcTextInput" rows="2" class="nfc-textarea"></textarea>
+                    </div>
+
+                    <div id="nfcFieldsWhatsapp" class="nfc-field" style="display:none;">
+                        <span class="field-label">Número (com DDI+DDD, só números):</span>
+                        <input
+                            type="text"
+                            id="nfcWhatsappPhone"
+                            class="nfc-input"
+                            placeholder="Ex: 5513999998888"
+                            style="margin-bottom:8px;"
+                        />
+                        <span class="field-label">Mensagem inicial (opcional):</span>
+                        <textarea
+                            id="nfcWhatsappMsg"
+                            rows="2"
+                            class="nfc-textarea"
+                            placeholder="Ex: Oi! Vim pelo chaveiro :)"
+                        ></textarea>
+                    </div>
+
+                    <div id="nfcFieldsCall" class="nfc-field" style="display:none;">
+                        <span class="field-label">Número de telefone:</span>
+                        <input
+                            type="text"
+                            id="nfcCallPhone"
+                            class="nfc-input"
+                            placeholder="Ex: +5513999998888"
+                        />
+                    </div>
+
+                    <div id="nfcFieldsSms" class="nfc-field" style="display:none;">
+                        <span class="field-label">Número de telefone:</span>
+                        <input
+                            type="text"
+                            id="nfcSmsPhone"
+                            class="nfc-input"
+                            placeholder="Ex: +5513999998888"
+                            style="margin-bottom:8px;"
+                        />
+                        <span class="field-label">Mensagem (opcional):</span>
+                        <textarea id="nfcSmsMsg" rows="2" class="nfc-textarea"></textarea>
+                    </div>
+
+                    <div id="nfcFieldsEmail" class="nfc-field" style="display:none;">
+                        <span class="field-label">E-mail de destino:</span>
+                        <input
+                            type="text"
+                            id="nfcEmailTo"
+                            class="nfc-input"
+                            placeholder="contato@exemplo.com"
+                            style="margin-bottom:8px;"
+                        />
+                        <span class="field-label">Assunto (opcional):</span>
+                        <input type="text" id="nfcEmailSubject" class="nfc-input" style="margin-bottom:8px;" />
+                        <span class="field-label">Mensagem (opcional):</span>
+                        <textarea id="nfcEmailBody" rows="2" class="nfc-textarea"></textarea>
+                    </div>
+
+                    <div id="nfcFieldsLocation" class="nfc-field" style="display:none;">
+                        <span class="field-label">Endereço ou nome do lugar:</span>
+                        <input
+                            type="text"
+                            id="nfcLocationQuery"
+                            class="nfc-input"
+                            placeholder="Ex: Rua Exemplo, 123, Guarujá - SP"
+                        />
+                        <p class="field-note" style="font-size:10.5px; color:var(--text-faint); margin-top:4px; font-weight:600;">
+                            Abre o endereço direto no Google Maps de quem encostar o celular.
+                        </p>
+                    </div>
+
+                    <div id="nfcFieldsPix" class="nfc-field" style="display:none;">
+                        <span class="field-label">Código PIX (copia e cola):</span>
+                        <textarea
+                            id="nfcPixCode"
+                            rows="3"
+                            class="nfc-textarea"
+                            placeholder="Cole aqui o código 'Pix Copia e Cola' gerado pelo seu banco"
+                        ></textarea>
+                        <p class="field-note" style="font-size:10.5px; color:var(--text-faint); margin-top:4px; font-weight:600;">
+                            Quem encostar o celular recebe esse código pra colar direto no app do banco.
+                        </p>
+                    </div>
+
+                    <div id="nfcFieldsWifi" class="nfc-field" style="display:none;">
+                        <span class="field-label">Nome da rede (SSID):</span>
+                        <input type="text" id="nfcWifiSsid" class="nfc-input" style="margin-bottom:8px;" />
+                        <span class="field-label">Senha:</span>
+                        <input type="text" id="nfcWifiPass" class="nfc-input" style="margin-bottom:8px;" />
+                        <span class="field-label">Segurança:</span>
+                        <select id="nfcWifiSecurity" class="nfc-select">
+                            <option value="WPA">WPA/WPA2</option>
+                            <option value="WEP">WEP</option>
+                            <option value="nopass">Rede aberta (sem senha)</option>
+                        </select>
+                    </div>
+
+                    <div id="nfcFieldsVcard" class="nfc-field" style="display:none;">
+                        <span class="field-label">Nome:</span>
+                        <input type="text" id="nfcVcardName" class="nfc-input" style="margin-bottom:8px;" />
+                        <span class="field-label">Telefone:</span>
+                        <input type="text" id="nfcVcardPhone" class="nfc-input" style="margin-bottom:8px;" />
+                        <span class="field-label">E-mail:</span>
+                        <input type="text" id="nfcVcardEmail" class="nfc-input" />
+                    </div>
+
+                    <button id="nfcPermBtn" type="button" class="upload-btn">
+                        🔐 Permitir uso do NFC do celular
+                    </button>
+                    <div id="nfcPermStatus" class="nfc-status"></div>
+
+                    <button id="nfcWriteBtn" type="button" class="upload-btn" disabled style="opacity:.5;">
+                        📡 Aproximar e gravar tag
+                    </button>
+                    <button id="nfcCancelScanBtn" type="button" class="nfc-cancel-btn">
+                        ✕ Cancelar
+                    </button>
+                    <div id="nfcWriteStatus" class="nfc-status"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="follow-overlay" id="followOverlay">
+            <div class="follow-modal">
+                <span class="fm-icon">📸</span>
+                <h2>Antes de gravar...</h2>
+                <p>
+                    Se um dia você quiser <strong>trocar o que está gravado</strong>
+                    nesse chaveiro, vai precisar achar esse site de novo.
+                    Segue a <strong>@nollie3d</strong> no Instagram pra sempre
+                    ter o link salvo lá e não perder o acesso.
+                </p>
+                <a
+                    href="https://www.instagram.com/nollie3d?igsh=MW44ZGIzaW45MjllbA%3D%3D&utm_source=qr"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn-primary-cta"
+                    id="followInstaBtn"
+                >
+                    📷 Seguir @nollie3d
+                </a>
+                <button type="button" class="fm-skip" id="followSkipBtn">
+                    Já sigo / continuar sem seguir
+                </button>
+            </div>
+        </div>
+
+        <script>
+            // ======================================================================
+            // Cards de "O que dá pra gravar": ao tocar, pré-seleciona o tipo
+            // no formulário lá embaixo e rola a tela até ele — pra ficar
+            // intuitivo mesmo sem ler instrução nenhuma.
+            // ======================================================================
+            document.querySelectorAll('.function-card').forEach(function (card) {
+                card.addEventListener('click', function () {
+                    const type = card.getAttribute('data-type');
+                    const select = document.getElementById('nfcWriteType');
+                    if (select && type) {
+                        select.value = type;
+                        select.dispatchEvent(new Event('change'));
+                    }
+                    const target = document.getElementById('gravar');
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // ======================================================================
+            // Aviso "siga antes de gravar": aparece assim que a página abre,
+            // pra qualquer pessoa que entrar nessa aba — e só some quando
+            // ela confirmar que leu, clicando em "Seguir @nollie3d" ou em
+            // "Já sigo / continuar sem seguir". Não fecha sozinho, não fecha
+            // clicando fora e não tem botão de "X".
+            // ======================================================================
+            (function initFollowOverlay() {
+                const overlay = document.getElementById('followOverlay');
+                const skipBtn = document.getElementById('followSkipBtn');
+                const instaBtn = document.getElementById('followInstaBtn');
+                if (!overlay) return;
+
+                function closeOverlay() {
+                    overlay.classList.remove('open');
+                }
+
+                overlay.classList.add('open');
+
+                if (skipBtn) skipBtn.addEventListener('click', closeOverlay);
+                if (instaBtn) instaBtn.addEventListener('click', closeOverlay);
+            })();
+
+            // ======================================================================
+            // Menu mobile (mesmo comportamento do gerador)
+            // ======================================================================
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const nollieNav = document.getElementById('nollieNav');
+
+            function setMobileNavOpen(open) {
+                if (!nollieNav || !mobileMenuBtn) return;
+                nollieNav.classList.toggle('mobile-open', open);
+                mobileMenuBtn.textContent = open ? '✕' : '☰';
+                mobileMenuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+                mobileMenuBtn.setAttribute('aria-expanded', String(open));
+            }
+
+            if (mobileMenuBtn && nollieNav) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    setMobileNavOpen(!nollieNav.classList.contains('mobile-open'));
+                });
+                nollieNav.querySelectorAll('a, .generator-tab').forEach((el) => {
+                    el.addEventListener('click', () => setMobileNavOpen(false));
+                });
+            }
+
+            // ======================================================================
+            // Gravação real de etiqueta NFC direto do navegador, usando a Web NFC API
+            // (NDEFReader). Isso só funciona no Chrome para Android, em página HTTPS
+            // (ou localhost), com o NFC do aparelho ligado. Em iPhone, desktop ou
+            // outros navegadores a API não existe — nesse caso mostramos um aviso
+            // explicando a limitação, em vez de fingir que funciona.
+            // ======================================================================
+            (function initNfcWriter() {
+                const unsupportedMsg = document.getElementById('nfcWriterUnsupportedMsg');
+                const writerBody = document.getElementById('nfcWriterBody');
+                const typeSelect = document.getElementById('nfcWriteType');
+                const fieldsUrl = document.getElementById('nfcFieldsUrl');
+                const fieldsText = document.getElementById('nfcFieldsText');
+                const fieldsWifi = document.getElementById('nfcFieldsWifi');
+                const fieldsVcard = document.getElementById('nfcFieldsVcard');
+                const fieldsWhatsapp = document.getElementById('nfcFieldsWhatsapp');
+                const fieldsCall = document.getElementById('nfcFieldsCall');
+                const fieldsSms = document.getElementById('nfcFieldsSms');
+                const fieldsEmail = document.getElementById('nfcFieldsEmail');
+                const fieldsLocation = document.getElementById('nfcFieldsLocation');
+                const fieldsPix = document.getElementById('nfcFieldsPix');
+                const writeBtn = document.getElementById('nfcWriteBtn');
+                const cancelBtn = document.getElementById('nfcCancelScanBtn');
+                const statusEl = document.getElementById('nfcWriteStatus');
+                const permBtn = document.getElementById('nfcPermBtn');
+                const permStatusEl = document.getElementById('nfcPermStatus');
+
+                const isSupported = 'NDEFReader' in window;
+                const isSecure = window.isSecureContext === true;
+
+                if (isSupported && isSecure) {
+                    writerBody.style.display = 'block';
+                } else if (isSupported && !isSecure) {
+                    unsupportedMsg.style.display = 'block';
+                    unsupportedMsg.textContent = '⚠️ Para gravar NFC, abra este site por um endereço HTTPS (ex: https://... ). Em http:// ou arquivo local o navegador bloqueia o NFC antes mesmo de pedir permissão.';
+                } else {
+                    unsupportedMsg.style.display = 'block';
+                    unsupportedMsg.textContent = 'Este navegador não suporta Web NFC (funciona no Chrome para Android, encostando o celular na tag). Em iPhone/desktop não é possível gravar por aqui.';
+                }
+
+                function showFieldsFor(type) {
+                    fieldsUrl.style.display = type === 'url' ? 'block' : 'none';
+                    fieldsText.style.display = type === 'text' ? 'block' : 'none';
+                    fieldsWifi.style.display = type === 'wifi' ? 'block' : 'none';
+                    fieldsVcard.style.display = type === 'vcard' ? 'block' : 'none';
+                    fieldsWhatsapp.style.display = type === 'whatsapp' ? 'block' : 'none';
+                    fieldsCall.style.display = type === 'call' ? 'block' : 'none';
+                    fieldsSms.style.display = type === 'sms' ? 'block' : 'none';
+                    fieldsEmail.style.display = type === 'email' ? 'block' : 'none';
+                    fieldsLocation.style.display = type === 'location' ? 'block' : 'none';
+                    fieldsPix.style.display = type === 'pix' ? 'block' : 'none';
+                }
+                if (typeSelect) {
+                    typeSelect.addEventListener('change', () => showFieldsFor(typeSelect.value));
+                    showFieldsFor(typeSelect.value);
+                }
+
+                function setStatus(msg, kind) {
+                    if (!statusEl) return;
+                    statusEl.textContent = msg;
+                    statusEl.style.color = kind === 'error' ? 'var(--accent-red)'
+                        : kind === 'ok' ? 'var(--accent-green-dark)'
+                        : 'var(--text-muted)';
+                }
+
+                function buildVCard(name, phone, email) {
+                    const lines = [
+                        'BEGIN:VCARD',
+                        'VERSION:3.0',
+                        'N:' + name,
+                        'FN:' + name
+                    ];
+                    if (phone) lines.push('TEL;TYPE=CELL:' + phone);
+                    if (email) lines.push('EMAIL:' + email);
+                    lines.push('END:VCARD');
+                    return lines.join('\n');
+                }
+
+                function buildWifiPayload(ssid, pass, security) {
+                    const esc = (s) => String(s).replace(/([\\;,:"])/g, '\\$1');
+                    const sec = security === 'nopass' ? 'nopass' : security;
+                    let str = `WIFI:T:${sec};S:${esc(ssid)};`;
+                    if (sec !== 'nopass') str += `P:${esc(pass)};`;
+                    str += ';';
+                    return str;
+                }
+
+                function buildRecords() {
+                    const type = typeSelect.value;
+                    if (type === 'url') {
+                        const url = document.getElementById('nfcUrlInput').value.trim();
+                        if (!url) throw new Error('Digite a URL que quer gravar.');
+                        let finalUrl = url;
+                        if (!/^https?:\/\//i.test(finalUrl) && !/^[a-z]+:/i.test(finalUrl)) {
+                            finalUrl = 'https://' + finalUrl;
+                        }
+                        return [{ recordType: 'url', data: finalUrl }];
+                    }
+                    if (type === 'text') {
+                        const text = document.getElementById('nfcTextInput').value.trim();
+                        if (!text) throw new Error('Digite o texto que quer gravar.');
+                        return [{ recordType: 'text', data: text }];
+                    }
+                    if (type === 'wifi') {
+                        const ssid = document.getElementById('nfcWifiSsid').value.trim();
+                        const pass = document.getElementById('nfcWifiPass').value;
+                        const security = document.getElementById('nfcWifiSecurity').value;
+                        if (!ssid) throw new Error('Digite o nome da rede (SSID).');
+                        if (security !== 'nopass' && !pass) throw new Error('Digite a senha da rede, ou escolha "Rede aberta".');
+                        const payload = buildWifiPayload(ssid, pass, security);
+                        return [{ recordType: 'text', data: payload }];
+                    }
+                    if (type === 'vcard') {
+                        const name = document.getElementById('nfcVcardName').value.trim();
+                        const phone = document.getElementById('nfcVcardPhone').value.trim();
+                        const email = document.getElementById('nfcVcardEmail').value.trim();
+                        if (!name) throw new Error('Digite pelo menos o nome do contato.');
+                        const vcard = buildVCard(name, phone, email);
+                        return [{ recordType: 'mime', mediaType: 'text/vcard', data: new TextEncoder().encode(vcard) }];
+                    }
+                    if (type === 'whatsapp') {
+                        const rawPhone = document.getElementById('nfcWhatsappPhone').value.trim();
+                        const msg = document.getElementById('nfcWhatsappMsg').value.trim();
+                        const phone = rawPhone.replace(/\D/g, '');
+                        if (!phone) throw new Error('Digite o número de WhatsApp (com DDI e DDD, só números).');
+                        let url = 'https://wa.me/' + phone;
+                        if (msg) url += '?text=' + encodeURIComponent(msg);
+                        return [{ recordType: 'url', data: url }];
+                    }
+                    if (type === 'call') {
+                        const phone = document.getElementById('nfcCallPhone').value.trim();
+                        if (!phone) throw new Error('Digite o número de telefone.');
+                        return [{ recordType: 'url', data: 'tel:' + phone.replace(/[^\d+]/g, '') }];
+                    }
+                    if (type === 'sms') {
+                        const phone = document.getElementById('nfcSmsPhone').value.trim();
+                        const msg = document.getElementById('nfcSmsMsg').value.trim();
+                        if (!phone) throw new Error('Digite o número de telefone.');
+                        const cleanPhone = phone.replace(/[^\d+]/g, '');
+                        let url = 'sms:' + cleanPhone;
+                        if (msg) url += '?body=' + encodeURIComponent(msg);
+                        return [{ recordType: 'url', data: url }];
+                    }
+                    if (type === 'email') {
+                        const to = document.getElementById('nfcEmailTo').value.trim();
+                        const subject = document.getElementById('nfcEmailSubject').value.trim();
+                        const body = document.getElementById('nfcEmailBody').value.trim();
+                        if (!to) throw new Error('Digite o e-mail de destino.');
+                        const params = [];
+                        if (subject) params.push('subject=' + encodeURIComponent(subject));
+                        if (body) params.push('body=' + encodeURIComponent(body));
+                        let url = 'mailto:' + to;
+                        if (params.length) url += '?' + params.join('&');
+                        return [{ recordType: 'url', data: url }];
+                    }
+                    if (type === 'location') {
+                        const query = document.getElementById('nfcLocationQuery').value.trim();
+                        if (!query) throw new Error('Digite o endereço ou nome do lugar.');
+                        const url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(query);
+                        return [{ recordType: 'url', data: url }];
+                    }
+                    if (type === 'pix') {
+                        const code = document.getElementById('nfcPixCode').value.trim();
+                        if (!code) throw new Error('Cole o código PIX copia e cola.');
+                        return [{ recordType: 'text', data: code }];
+                    }
+                    throw new Error('Tipo de gravação desconhecido.');
+                }
+
+                let currentController = null;
+                let permissionGranted = false;
+
+                function setPermStatus(msg, kind) {
+                    if (!permStatusEl) return;
+                    permStatusEl.textContent = msg;
+                    permStatusEl.style.color = kind === 'error' ? 'var(--accent-red)'
+                        : kind === 'ok' ? 'var(--accent-green-dark)'
+                        : 'var(--text-muted)';
+                }
+
+                function setWriteBtnEnabled(enabled) {
+                    if (!writeBtn) return;
+                    writeBtn.disabled = !enabled;
+                    writeBtn.style.opacity = enabled ? '1' : '0.5';
+                }
+
+                async function requestNfcPermission() {
+                    if (!isSupported) {
+                        setPermStatus('Este navegador não suporta Web NFC.', 'error');
+                        return;
+                    }
+                    if (!isSecure) {
+                        setPermStatus('⚠️ Este site precisa estar em HTTPS (ou localhost) para o navegador nem perguntar sobre NFC. Em http:// ou arquivo local ele bloqueia sem mostrar o pop-up.', 'error');
+                        return;
+                    }
+
+                    setPermStatus('📶 Abrindo o pop-up de permissão do navegador...');
+                    try {
+                        const ndef = new NDEFReader();
+                        const ctrl = new AbortController();
+                        await ndef.scan({ signal: ctrl.signal });
+                        ctrl.abort();
+                        permissionGranted = true;
+                        setPermStatus('✅ Permissão concedida! Agora toque em "Aproximar e gravar tag".', 'ok');
+                        setWriteBtnEnabled(true);
+                    } catch (err) {
+                        permissionGranted = false;
+                        setWriteBtnEnabled(false);
+                        if (err && err.name === 'NotAllowedError') {
+                            setPermStatus('❌ Permissão negada. Toque no cadeado/ícone (i) ao lado do endereço do site → "Permissões do site" → mude "NFC" para "Permitir" → recarregue a página e toque neste botão de novo.', 'error');
+                        } else if (err && err.name === 'NotSupportedError') {
+                            setPermStatus('O NFC do aparelho parece estar desligado. Ative o NFC nas configurações do Android e toque no botão de novo.', 'error');
+                        } else if (err && err.name === 'NotReadableError') {
+                            setPermStatus('Não foi possível acessar o NFC agora. Verifique se o NFC está ligado nas configurações do Android.', 'error');
+                        } else if (err && err.name === 'AbortError') {
+                            setPermStatus('Solicitação cancelada, tente novamente.', 'error');
+                        } else {
+                            setPermStatus('Erro ao pedir permissão: ' + (err && err.message ? err.message : err), 'error');
+                        }
+                    }
+                }
+                window.requestNfcWritePermission = requestNfcPermission;
+
+                if (permBtn) {
+                    permBtn.addEventListener('click', requestNfcPermission);
+                }
+
+                async function stopScan() {
+                    if (currentController) {
+                        try { currentController.abort(); } catch (err) {}
+                        currentController = null;
+                    }
+                    writeBtn.disabled = false;
+                    writeBtn.style.opacity = '1';
+                    cancelBtn.style.display = 'none';
+                }
+
+                if (cancelBtn) {
+                    cancelBtn.addEventListener('click', () => {
+                        stopScan();
+                        setStatus('Gravação cancelada.');
+                    });
+                }
+
+                if (writeBtn) {
+                    writeBtn.addEventListener('click', async () => {
+                        if (!isSupported) return;
+                        if (!permissionGranted) {
+                            setStatus('Toque primeiro em "Permitir uso do NFC do celular" acima.', 'error');
+                            return;
+                        }
+
+                        let records;
+                        try {
+                            records = buildRecords();
+                        } catch (err) {
+                            setStatus(err.message, 'error');
+                            return;
+                        }
+
+                        try {
+                            const ndef = new NDEFReader();
+                            currentController = new AbortController();
+
+                            writeBtn.disabled = true;
+                            writeBtn.style.opacity = '0.6';
+                            cancelBtn.style.display = 'block';
+                            setStatus('📶 Encoste o celular na etiqueta NFC agora...');
+
+                            await ndef.write({ records }, { signal: currentController.signal });
+
+                            setStatus('✅ Etiqueta gravada com sucesso!', 'ok');
+                        } catch (err) {
+                            if (err && err.name === 'AbortError') {
+                                setStatus('Gravação cancelada.');
+                            } else if (err && err.name === 'NotAllowedError') {
+                                setStatus('Permissão de NFC negada. Autorize o acesso ao NFC nas configurações do navegador.', 'error');
+                            } else if (err && err.name === 'NotSupportedError') {
+                                setStatus('O NFC do aparelho parece estar desligado ou indisponível.', 'error');
+                            } else {
+                                setStatus('Erro ao gravar: ' + (err && err.message ? err.message : err), 'error');
+                            }
+                        } finally {
+                            stopScan();
+                        }
+                    });
+                }
+            })();
+        </script>
+    </body>
+</html>
